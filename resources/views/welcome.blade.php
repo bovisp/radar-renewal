@@ -10,13 +10,13 @@
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.css" />
 
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="css/app.css">
     </head>
     <body>
       <div class="ui container" id="app">
         <example-component></example-component>
       </div>
 
-      <script src="{{ mix('js/app.js') }}"></script>
+      <script src="js/app.js"></script>
     </body>
 </html>
