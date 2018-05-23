@@ -2,47 +2,139 @@
   <div>
     <form class="ui form">
       <tabs>
-        <tab name="Specific course questions" :selected="true" title="tab1">
-          <div class="required field">
-            <label for="most_benefical">Which course do you feel was the most beneficial?</label>
-
-            <multiselect 
-              v-model="most_benefical"
-              :options="data.tab1.most_benefical.data"
-              :searchable="false"
-              :close-on-select="true" 
-              :show-labels="false"
-              placeholder="Choose a course..."
-              id="most_benefical"
-            ></multiselect>
-          </div>
-
-          <div class="required field">
-            <label for="least_benefical">Which course do you feel was the least beneficial?</label>
-
-            <multiselect 
-              v-model="least_benefical"
-              :options="data.tab1.least_benefical.data"
-              :searchable="false"
-              :close-on-select="true" 
-              :show-labels="false"
-              placeholder="Choose a course..."
-              id="least_benefical"
-            ></multiselect>
+        <tab name="Course objectives" :selected="true" title="tab1">
+          <div class="field">
+            <p>The following questions will evaluate how effectively the course met the learning objectives.</p>
           </div>
 
           <div class="field">
-            <label for="specific_courses">Do you have comments about specific course(s)?</label>
+            <label for="stated_objectives">1.	How well did each course meet the stated objectives?</label>
 
-            <multiselect 
+            <multiselect
+              v-model="stated_objectives"
+              @close="statedObjectives"
+              @open="statedObjectivesThanks=false"
+              :options="data.tab1.stated_objectives.data"
+              :searchable="false"
+              :close-on-select="true"
+              :show-labels="false"
+              placeholder="Choose a course..."
+              id="stated_objectives"
+            ></multiselect>
+          </div>
+
+          <template v-if="statedObjectivesCourseFeedbackActive">
+            <h4 class="ui dividing header">Did "{{ statedObjectivesCourseFeedback.name }}" successfully meet the learning objectives?</h4>
+
+            <div class="inline fields">
+              <label>Please select one:</label>
+              <div class="field">
+                <div class="ui radio checkbox">
+                  <input type="radio" v-model="statedObjectivesCourseFeedback.checkedOptions" value="Yes">
+                  <label>Yes</label>
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui radio checkbox">
+                  <input type="radio" v-model="statedObjectivesCourseFeedback.checkedOptions" value="No">
+                  <label>No</label>
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui radio checkbox">
+                  <input type="radio" v-model="statedObjectivesCourseFeedback.checkedOptions" value="Partially">
+                  <label>Partially</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Comments</label>
+              <textarea v-model="statedObjectivesCourseFeedback.additionalFeedback"></textarea>
+            </div>
+
+            <div class="field">
+              <button type="button" class="ui mini positive button" @click.prevent="addStatedObjectivesFeedback">Submit additional feedback</button>
+              <button type="button" class="ui mini basic button" @click.prevent="clearStatedObjectivesFeedback">Cancel</button>
+            </div>
+          </template>
+
+          <div class="field" v-if="statedObjectivesThanks">
+            <div class="ui positive message">
+              <i class="close icon" @click="statedObjectivesThanks=false"></i>
+              <div class="header">
+                Thank you!
+              </div>
+              <p>If you would like to submit feedback on another course, please choose one from the dropdown menu above.</p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="specific_courses">2.	Do you have any suggestions that could help improve a specific module?</label>
+
+            <multiselect
               v-model="specific_courses"
+              @close="specificSelect"
+              @open="specificCoursesThanks=false"
               :options="data.tab1.specific_courses.data"
               :searchable="false"
-              :close-on-select="true" 
+              :close-on-select="true"
               :show-labels="false"
               placeholder="Choose a course..."
               id="specific_courses"
             ></multiselect>
+          </div>
+
+          <template v-if="specificCoursesCourseFeedbackActive">
+            <h4 class="ui dividing header">Additional Feedback for {{ specificCoursesCourseFeedback.name }}</h4>
+
+            <div class="inline fields">
+              <label>Select one or more of the following themes:</label>
+              <div class="field">
+                <div class="ui checkbox">
+                  <input type="checkbox" v-model="specificCoursesCourseFeedback.checkedOptions" value="Audio">
+                  <label>Audio</label>
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui checkbox">
+                  <input type="checkbox" v-model="specificCoursesCourseFeedback.checkedOptions" value="Content">
+                  <label>Content</label>
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui checkbox">
+                  <input type="checkbox" v-model="specificCoursesCourseFeedback.checkedOptions" value="Format">
+                  <label>Format</label>
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui checkbox">
+                  <input type="checkbox" v-model="specificCoursesCourseFeedback.checkedOptions" value="Time to complete">
+                  <label>Time to complete</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Feel free to comment on the themes you chose...</label>
+              <textarea v-model="specificCoursesCourseFeedback.additionalFeedback"></textarea>
+            </div>
+
+            <div class="field">
+              <button type="button" class="ui mini positive button" @click.prevent="addSpecificCourseFeedback">Submit additional feedback</button>
+              <button type="button" class="ui mini basic button" @click.prevent="clearSpecificCourseFeedback">Cancel</button>
+            </div>
+          </template>
+
+          <div class="field" v-if="specificCoursesThanks">
+            <div class="ui positive message">
+              <i class="close icon" @click="specificCoursesThanks=false"></i>
+              <div class="header">
+                Thank you!
+              </div>
+              <p>If you would like to submit feedback on another course, please choose one from the dropdown menu above.</p>
+            </div>
           </div>
 
           <div class="clearfix field">
@@ -53,15 +145,47 @@
           </div>
         </tab>
 
-        <tab name="About Our Culture" title="tab2">
+        <tab name="Course content" title="tab2">
           <div class="field">
-            <label for="field3">Field #3</label>
-            <input type="text" name="field3" placeholder="Field #3" id="field3" v-model="tab2.field1">
+            <p>The following questions will evaluate the relevance of the material.</p>
+          </div>
+
+          <div class="field" v-if="!topicsThanks">
+            <label for="additionalTopic">3. Is there a topic that should be added to this course?</label>
+            <input type="text" placeholder="Type a topic description..." id="additionalTopic" v-model="additional_topic">
+          </div>
+
+          <template v-if="additional_topic.length > 0">
+            <div class="field">
+              <button type="button" class="ui mini positive button" @click.prevent="addTopic">Add topic</button>
+            </div>
+          </template>
+
+          <div class="field" v-if="topicsThanks">
+            <div class="ui positive message">
+              <i class="close icon" @click="topicsThanks=false"></i>
+              <div class="header">
+                Thank you!
+              </div>
+              <p>Would you like to suggest an additional topic? <button class="ui mini positive button" @click.prevent="topicsThanks=false">Yes</button></p>
+            </div>
           </div>
 
           <div class="field">
-            <label for="field4">Field #4</label>
-            <input type="text" name="field4" placeholder="Field #4" id="field4" v-model="tab2.field2">
+            <h5>4. Was there a topic(s) that should be dealt with in more depth?</h5>
+          </div>
+
+          <div class="field" v-for="course in data.tab2.topic_depth.data">
+            <div class="ui checkbox">
+              <input type="checkbox" v-model="topicDepthData.topics" :value="course">
+              <label>{{ course }}</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Feel free to comment on any of your course choices...</label>
+
+            <textarea v-model="topicDepthData.comments"></textarea>
           </div>
 
           <div class="clearfix field">
@@ -77,15 +201,63 @@
           </div>
         </tab>
 
-        <tab name="About Our Vision" title="tab3">
+        <tab name="Course structure" title="tab3">
           <div class="field">
-            <label for="field5">Field #5</label>
-            <input type="text" name="field5" placeholder="Field #5" id="field5" v-model="tab3.field1">
+            <p>The following questions will evaluate the structure and organization of the course.</p>
           </div>
 
           <div class="field">
-            <label for="field6">Field #6</label>
-            <input type="text" name="field6" placeholder="Field #6" id="field6" v-model="tab3.field2">
+            <h5>5. Did you find the recommended paths helpful?</h5>
+          </div>
+
+          <div class="inline fields">
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" v-model="pathsHelpfulData.checkedOptions" value="Yes">
+                <label>Yes</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" v-model="pathsHelpfulData.checkedOptions" value="No">
+                <label>No</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Feel free expand more fully on your choice...</label>
+            <textarea v-model="pathsHelpfulData.comments"></textarea>
+          </div>
+
+          <div class="field">
+            <h5>6. How did you find the overall length of the training material?</h5>
+          </div>
+
+          <div class="inline fields">
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" v-model="overallLengthData" value="Too little">
+                <label>Too little</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" v-model="overallLengthData" value="Too much">
+                <label>Too much</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" v-model="overallLengthData" value="Just right">
+                <label>Just right</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>7. Do you have any suggestions that could help improve the radar renewal course series?</label>
+            <textarea v-model="improveCourseData"></textarea>
           </div>
 
           <div class="clearfix field">
@@ -99,13 +271,6 @@
 
       <button class="big fluid positive bottom attached ui button" @click.prevent="validate">Submit feedback</button>
     </form>
-
-    <div class="ui error message">
-      <div class="header">
-        Some required fields were left blank
-      </div>
-      <p>Here are the fields:</p>
-    </div>
   </div>
 </template>
 
@@ -121,9 +286,42 @@
 
     data () {
       return {
-        most_benefical: '',
-        least_benefical: '',
+        stated_objectives: '',
         specific_courses: '',
+        additional_topic: '',
+
+        specificCoursesData: [],
+        statedObjectivesData: [],
+        topicsData: [],
+        topicDepthData: {
+          topics: [],
+          comments: ''
+        },
+        pathsHelpfulData: {
+          checkedOptions: '',
+          comments: ''
+        },
+        overallLengthData: '',
+        improveCourseData: '',
+
+        specificCoursesCourseFeedback: {
+          name: '',
+          checkedOptions: [],
+          additionalFeedback: ''
+        },
+        statedObjectivesCourseFeedback: {
+          name: '',
+          checkedOptions: [],
+          additionalFeedback: ''
+        },
+
+        specificCoursesCourseFeedbackActive: false,
+        statedObjectivesCourseFeedbackActive: false,
+
+        specificCoursesThanks: false,
+        statedObjectivesThanks: false,
+        topicsThanks: false,
+
         tab1: {
           field1: '',
           field2: ''
@@ -138,7 +336,7 @@
         },
         data: {
           tab1: {
-            most_benefical: {
+            stated_objectives: {
               required: true,
               hasError: false,
               value: '',
@@ -152,7 +350,23 @@
                 'Dual Polarization: Advanced Radar Products'
               ],
             },
-            least_benefical: {
+            specific_courses: {
+              required: false,
+              hasError: false,
+              value: '',
+              data: [
+                'Radar Refresher',
+                'S-Band',
+                'X-Band',
+                'S/C/X-Band Comparison',
+                'Dual-Polarization Fundamentals',
+                'Dual Polarization: Basic Radar Products',
+                'Dual Polarization: Advanced Radar Products'
+              ],
+            }
+          },
+          tab2: {
+            topic_depth: {
               required: true,
               hasError: false,
               value: '',
@@ -194,22 +408,92 @@
         let data = {}
 
         data = flattenObject(this.data, 1, '')
-        
-        console.log(data)
-      }
-    },
+      },
 
-    watch: {
-      specific_courses () {
+      specificSelect () {
+        this.specificCoursesCourseFeedback['name'] = this.specific_courses
+
+        this.specificCoursesCourseFeedbackActive = true
+      },
+
+      addSpecificCourseFeedback () {
+        this.specificCoursesData.push(this.specificCoursesCourseFeedback)
+
+        this.specificCoursesThanks = true
+
+        this.specificCoursesCourseFeedbackActive = false
+
         let index = this.data.tab1.specific_courses.data.findIndex(item => this.specific_courses === item)
-
-        console.log(index)
 
         this.data.tab1.specific_courses.data.splice(index, 1)
 
         this.specific_courses = ''
+
+        this.specificCoursesCourseFeedback = {
+          name: '',
+          checkedOptions: [],
+          additionalFeedback: ''
+        }
+      },
+
+      clearSpecificCourseFeedback () {
+        this.specific_courses = ''
+
+        this.specificCoursesCourseFeedback = {
+          name: '',
+          checkedOptions: [],
+          additionalFeedback: ''
+        }
+
+        this.specificCoursesCourseFeedbackActive = false
+      },
+
+      statedObjectives () {
+        this.statedObjectivesCourseFeedback['name'] = this.stated_objectives
+
+        this.statedObjectivesCourseFeedbackActive = true
+      },
+
+      addStatedObjectivesFeedback () {
+        this.statedObjectivesData.push(this.statedObjectivesCourseFeedback)
+
+        this.statedObjectivesThanks = true
+
+        this.statedObjectivesCourseFeedbackActive = false
+
+        let index = this.data.tab1.stated_objectives.data.findIndex(item => this.stated_objectives === item)
+
+        this.data.tab1.stated_objectives.data.splice(index, 1)
+
+        this.stated_objectives = ''
+
+        this.statedObjectivesCourseFeedback = {
+          name: '',
+          checkedOptions: [],
+          additionalFeedback: ''
+        }
+      },
+
+      clearStatedObjectivesFeedback () {
+        this.stated_objectives = ''
+
+        this.statedObjectivesCourseFeedback = {
+          name: '',
+          checkedOptions: [],
+          additionalFeedback: ''
+        }
+
+        this.statedObjectivesCourseFeedbackActive = false
+      },
+
+      addTopic () {
+        this.topicsData.push(this.additional_topic)
+
+        this.topicsThanks = true
+
+        this.additional_topic = ''
       }
-    }
+    },
 
     // watch: {
     //   tab1: {

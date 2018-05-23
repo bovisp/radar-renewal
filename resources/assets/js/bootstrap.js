@@ -1,6 +1,6 @@
-import { find } from 'lodash/find'
+import lodash from 'lodash'
 
-window._find = find
+window._ = lodash
 // window._ = require('lodash');
 
 /**
