@@ -1,138 +1,138 @@
 <template>
-  <div>
+  <div style="position: relative;">
+    <div class="overlay" v-if="isSubmitting || isSuccess"></div>
+
+    <div class="submitting" v-if="isSubmitting && !isSuccess">
+      <div class="ui padded segment">
+        <h4 class="ui header">Submitting your feedback</h4>
+
+        <div class="loader"></div>
+      </div>
+    </div>
+
+    <div class="success" v-if="isSuccess">
+      <div class="ui padded segment">
+        <h4 class="ui header">Success! Thanks for your feedback</h4>
+
+        <i class="huge green check icon"></i>
+      </div>
+    </div>
+
     <form class="ui form">
       <tabs>
+
+        <!-- Begin Tab: Course objectives -->
+
+        <!-- Begin question #1 -->
+
         <tab name="Course objectives" :selected="true" title="tab1">
-          <div class="field">
-            <p>The following questions will evaluate how effectively the course met the learning objectives.</p>
-          </div>
+          <p>The following questions will evaluate how effectively the course met the learning objectives.</p>
+
+          <h4 class="ui dividing header">1.	How well did each course meet the stated objectives?</h4>
 
           <div class="field">
-            <label for="stated_objectives">1.	How well did each course meet the stated objectives?</label>
-
             <multiselect
-              v-model="stated_objectives"
-              @close="statedObjectives"
-              @open="statedObjectivesThanks=false"
-              :options="data.tab1.stated_objectives.data"
+              v-model="question1Model"
+              @close="question1Select"
+              @open="question1Thanks=false"
+              :options="question1Options.select"
               :searchable="false"
               :close-on-select="true"
               :show-labels="false"
               placeholder="Choose a course..."
-              id="stated_objectives"
             ></multiselect>
           </div>
 
-          <template v-if="statedObjectivesCourseFeedbackActive">
-            <h4 class="ui dividing header">Did "{{ statedObjectivesCourseFeedback.name }}" successfully meet the learning objectives?</h4>
+          <template v-if="question1ItemActive">
+            <h5 class="ui header">Did the "{{ question1Item.name }}" course successfully meet the learning objectives?</h5>
 
             <div class="inline fields">
-              <label>Please select one:</label>
-              <div class="field">
+              <p>Please select one:</p>
+
+              <div class="field" v-for="option in question1Options.radio">
                 <div class="ui radio checkbox">
-                  <input type="radio" v-model="statedObjectivesCourseFeedback.checkedOptions" value="Yes">
-                  <label>Yes</label>
+                  <input type="radio" v-model="question1Item.options" :value="option" :id="option">
+
+                  <label :for="option">{{ option }}</label>
                 </div>
-              </div>
-              <div class="field">
-                <div class="ui radio checkbox">
-                  <input type="radio" v-model="statedObjectivesCourseFeedback.checkedOptions" value="No">
-                  <label>No</label>
-                </div>
-              </div>
-              <div class="field">
-                <div class="ui radio checkbox">
-                  <input type="radio" v-model="statedObjectivesCourseFeedback.checkedOptions" value="Partially">
-                  <label>Partially</label>
-                </div>
+
               </div>
             </div>
 
             <div class="field">
               <label>Comments</label>
-              <textarea v-model="statedObjectivesCourseFeedback.additionalFeedback"></textarea>
+
+              <textarea v-model="question1Item.comments"></textarea>
             </div>
 
             <div class="field">
-              <button type="button" class="ui mini positive button" @click.prevent="addStatedObjectivesFeedback">Submit additional feedback</button>
-              <button type="button" class="ui mini basic button" @click.prevent="clearStatedObjectivesFeedback">Cancel</button>
+              <button type="button" class="ui mini positive button" @click.prevent="addQuestion1Data">Submit additional feedback</button>
+              <button type="button" class="ui mini basic button" @click.prevent="clearQuestion1Data">Cancel</button>
             </div>
           </template>
 
-          <div class="field" v-if="statedObjectivesThanks">
-            <div class="ui positive message">
-              <i class="close icon" @click="statedObjectivesThanks=false"></i>
-              <div class="header">
-                Thank you!
-              </div>
-              <p>If you would like to submit feedback on another course, please choose one from the dropdown menu above.</p>
+          <div class="ui positive message" v-if="question1Thanks">
+            <i class="close icon" @click="question1Thanks=false"></i>
+            <div class="header">
+              Thank you!
             </div>
+            <p>If you would like to submit feedback on another course, please choose one from the dropdown menu above.</p>
           </div>
 
-          <div class="field">
-            <label for="specific_courses">2.	Do you have any suggestions that could help improve a specific module?</label>
+          <!-- End question #1 -->
 
+          <!-- Begin question #2 -->
+
+          <h4 class="ui dividing header">2.	Do you have any suggestions that could help improve a specific module?</h4>
+
+          <div class="field">
             <multiselect
-              v-model="specific_courses"
-              @close="specificSelect"
-              @open="specificCoursesThanks=false"
-              :options="data.tab1.specific_courses.data"
+              v-model="question2Model"
+              @close="question2Select"
+              @open="question2Thanks=false"
+              :options="question2Options.select"
               :searchable="false"
               :close-on-select="true"
               :show-labels="false"
               placeholder="Choose a course..."
-              id="specific_courses"
             ></multiselect>
           </div>
 
-          <template v-if="specificCoursesCourseFeedbackActive">
-            <h4 class="ui dividing header">Additional Feedback for {{ specificCoursesCourseFeedback.name }}</h4>
+          <template v-if="question2ItemActive">
+            <h5 class="ui header">Additional Feedback for {{ question2Item.name }}</h5>
 
             <div class="inline fields">
-              <label>Select one or more of the following themes:</label>
-              <div class="field">
+              <p>Select one or more of the following themes:</p>
+
+              <div class="field" v-for="option in question2Options.checkbox">
                 <div class="ui checkbox">
-                  <input type="checkbox" v-model="specificCoursesCourseFeedback.checkedOptions" value="Audio">
-                  <label>Audio</label>
-                </div>
-              </div>
-              <div class="field">
-                <div class="ui checkbox">
-                  <input type="checkbox" v-model="specificCoursesCourseFeedback.checkedOptions" value="Content">
-                  <label>Content</label>
-                </div>
-              </div>
-              <div class="field">
-                <div class="ui checkbox">
-                  <input type="checkbox" v-model="specificCoursesCourseFeedback.checkedOptions" value="Format">
-                  <label>Format</label>
-                </div>
-              </div>
-              <div class="field">
-                <div class="ui checkbox">
-                  <input type="checkbox" v-model="specificCoursesCourseFeedback.checkedOptions" value="Time to complete">
-                  <label>Time to complete</label>
+                  <input type="checkbox" v-model="question2Item.options" :value="option" :id="option">
+
+                  <label :for="option">{{ option }}</label>
                 </div>
               </div>
             </div>
 
             <div class="field">
               <label>Feel free to comment on the themes you chose...</label>
-              <textarea v-model="specificCoursesCourseFeedback.additionalFeedback"></textarea>
+
+              <textarea v-model="question2Item.comments"></textarea>
             </div>
 
             <div class="field">
-              <button type="button" class="ui mini positive button" @click.prevent="addSpecificCourseFeedback">Submit additional feedback</button>
-              <button type="button" class="ui mini basic button" @click.prevent="clearSpecificCourseFeedback">Cancel</button>
+              <button type="button" class="ui mini positive button" @click.prevent="addQuestion2Data">Submit additional feedback</button>
+              <button type="button" class="ui mini basic button" @click.prevent="clearQuestion2Data">Cancel</button>
             </div>
           </template>
 
-          <div class="field" v-if="specificCoursesThanks">
+          <div class="field" v-if="question2Thanks">
             <div class="ui positive message">
-              <i class="close icon" @click="specificCoursesThanks=false"></i>
+              <i class="close icon" @click="question2Thanks=false"></i>
+
               <div class="header">
                 Thank you!
               </div>
+
               <p>If you would like to submit feedback on another course, please choose one from the dropdown menu above.</p>
             </div>
           </div>
@@ -143,49 +143,63 @@
               <i class="right chevron icon"></i>
             </button>
           </div>
+
+          <!-- End question #2 -->
+
         </tab>
+
+        <!-- End Tab: Course objectives -->
+
+        <!-- Begin Tab: Course content -->
 
         <tab name="Course content" title="tab2">
           <div class="field">
             <p>The following questions will evaluate the relevance of the material.</p>
           </div>
 
-          <div class="field" v-if="!topicsThanks">
-            <label for="additionalTopic">3. Is there a topic that should be added to this course?</label>
-            <input type="text" placeholder="Type a topic description..." id="additionalTopic" v-model="additional_topic">
+          <!-- Begin question #3 -->
+
+          <h4 class="ui dividing header">3. Is there a topic that should be added to this course series?</h4>
+
+          <div class="field" v-if="!question3Thanks">
+            <input type="text" placeholder="Type a topic description..." v-model="question3Model">
           </div>
 
-          <template v-if="additional_topic.length > 0">
+          <template v-if="question3Model.length > 0">
             <div class="field">
-              <button type="button" class="ui mini positive button" @click.prevent="addTopic">Add topic</button>
+              <button type="button" class="ui mini positive button" @click.prevent="addQuestion3Data">Add topic</button>
             </div>
           </template>
 
-          <div class="field" v-if="topicsThanks">
+          <div class="field" v-if="question3Thanks">
             <div class="ui positive message">
-              <i class="close icon" @click="topicsThanks=false"></i>
+              <i class="close icon" @click="question3Thanks=false"></i>
+
               <div class="header">
                 Thank you!
               </div>
-              <p>Would you like to suggest an additional topic? <button class="ui mini positive button" @click.prevent="topicsThanks=false">Yes</button></p>
+
+              <p>Would you like to suggest an additional topic? <button class="ui mini positive button" @click.prevent="question3Thanks=false">Yes</button></p>
             </div>
           </div>
 
-          <div class="field">
-            <h5>4. Was there a topic(s) that should be dealt with in more depth?</h5>
-          </div>
+          <!-- End question #3 -->
 
-          <div class="field" v-for="course in data.tab2.topic_depth.data">
+          <!-- Begin question #4 -->
+
+          <h4 class="ui dividing header">4. Was there a topic(s) that should be dealt with in more depth?</h4>
+
+          <div class="field" v-for="option in question4Options">
             <div class="ui checkbox">
-              <input type="checkbox" v-model="topicDepthData.topics" :value="course">
-              <label>{{ course }}</label>
+              <input type="checkbox" v-model="question4Data.options" :value="option">
+              <label>{{ option }}</label>
             </div>
           </div>
 
           <div class="field">
             <label>Feel free to comment on any of your course choices...</label>
 
-            <textarea v-model="topicDepthData.comments"></textarea>
+            <textarea v-model="question4Data.comments"></textarea>
           </div>
 
           <div class="clearfix field">
@@ -199,65 +213,64 @@
               <i class="right chevron icon"></i>
             </button>
           </div>
+
+          <!-- End question #4 -->
+
         </tab>
+
+        <!-- End Tab: Course objectives -->
+
+        <!-- Begin Tab: Course structure -->
 
         <tab name="Course structure" title="tab3">
           <div class="field">
             <p>The following questions will evaluate the structure and organization of the course.</p>
           </div>
 
-          <div class="field">
-            <h5>5. Did you find the recommended paths helpful?</h5>
-          </div>
+          <!-- Begin question #5 -->
+
+          <h4 class="ui dividing header">5. Did you find the recommended paths helpful?</h4>
 
           <div class="inline fields">
-            <div class="field">
+            <div class="field" v-for="option in question5Options">
               <div class="ui radio checkbox">
-                <input type="radio" v-model="pathsHelpfulData.checkedOptions" value="Yes">
-                <label>Yes</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui radio checkbox">
-                <input type="radio" v-model="pathsHelpfulData.checkedOptions" value="No">
-                <label>No</label>
+                <input type="radio" v-model="question5Data.options" :value="option" :id="option">
+
+                <label :for="option">{{ option }}</label>
               </div>
             </div>
           </div>
 
           <div class="field">
             <label>Feel free expand more fully on your choice...</label>
-            <textarea v-model="pathsHelpfulData.comments"></textarea>
+
+            <textarea v-model="question5Data.comments"></textarea>
           </div>
 
-          <div class="field">
-            <h5>6. How did you find the overall length of the training material?</h5>
-          </div>
+          <!-- End question #5 -->
+
+          <!-- Begin question #6 -->
+
+          <h4 class="ui dividing header">6. How did you find the overall length of the training material?</h4>
 
           <div class="inline fields">
-            <div class="field">
+            <div class="field" v-for="option in question6Options">
               <div class="ui radio checkbox">
-                <input type="radio" v-model="overallLengthData" value="Too little">
-                <label>Too little</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui radio checkbox">
-                <input type="radio" v-model="overallLengthData" value="Too much">
-                <label>Too much</label>
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui radio checkbox">
-                <input type="radio" v-model="overallLengthData" value="Just right">
-                <label>Just right</label>
+                <input type="radio" v-model="question6Data" :value="option" :id="option">
+
+                <label :for="option">{{ option }}</label>
               </div>
             </div>
           </div>
 
+          <!-- End question #6 -->
+
+          <!-- Begin question #7 -->
+
+          <h4 class="ui dividing header">7. Do you have any suggestions that could help improve the radar renewal course series?</h4>
+
           <div class="field">
-            <label>7. Do you have any suggestions that could help improve the radar renewal course series?</label>
-            <textarea v-model="improveCourseData"></textarea>
+            <textarea v-model="question7Data"></textarea>
           </div>
 
           <div class="clearfix field">
@@ -266,10 +279,16 @@
               Previous
             </button>
           </div>
+
+          <!-- End question #7 -->
+
         </tab>
+
+        <!-- End Tab: Course structure -->
+
       </tabs>
 
-      <button class="big fluid positive bottom attached ui button" @click.prevent="validate">Submit feedback</button>
+      <button class="big fluid positive bottom attached ui button" @click.prevent="submit">Submit feedback</button>
     </form>
   </div>
 </template>
@@ -286,116 +305,96 @@
 
     data () {
       return {
-        stated_objectives: '',
-        specific_courses: '',
-        additional_topic: '',
+        question1Model: '',
+        question2Model: '',
+        question3Model: '',
 
-        specificCoursesData: [],
-        statedObjectivesData: [],
-        topicsData: [],
-        topicDepthData: {
-          topics: [],
+        question1Data: [],
+        question2Data: [],
+        question3Data: [],
+        question4Data: {
+          options: [],
           comments: ''
         },
-        pathsHelpfulData: {
-          checkedOptions: '',
+        question5Data: {
+          options: '',
           comments: ''
         },
-        overallLengthData: '',
-        improveCourseData: '',
+        question6Data: '',
+        question7Data: '',
 
-        specificCoursesCourseFeedback: {
+        question1Item: {
           name: '',
-          checkedOptions: [],
-          additionalFeedback: ''
+          options: [],
+          comments: ''
         },
-        statedObjectivesCourseFeedback: {
+        question2Item: {
           name: '',
-          checkedOptions: [],
-          additionalFeedback: ''
+          options: [],
+          comments: ''
         },
 
-        specificCoursesCourseFeedbackActive: false,
-        statedObjectivesCourseFeedbackActive: false,
+        question1ItemActive: false,
+        question2ItemActive: false,
 
-        specificCoursesThanks: false,
-        statedObjectivesThanks: false,
-        topicsThanks: false,
+        question1Thanks: false,
+        question2Thanks: false,
+        question3Thanks: false,
 
-        tab1: {
-          field1: '',
-          field2: ''
+        isSubmitting: false,
+        isSuccess: false,
+
+        question1Options: {
+          select: [
+            'Radar Refresher',
+            'S-Band',
+            'X-Band',
+            'S/C/X-Band Comparison',
+            'Dual-Polarization Fundamentals',
+            'Dual Polarization: Basic Radar Products',
+            'Dual Polarization: Advanced Radar Products'
+          ],
+          radio: [
+            'Yes',
+            'No',
+            'Partially'
+          ]
         },
-        tab2: {
-          field1: '',
-          field2: ''
+        question2Options: {
+          select: [
+            'Radar Refresher',
+            'S-Band',
+            'X-Band',
+            'S/C/X-Band Comparison',
+            'Dual-Polarization Fundamentals',
+            'Dual Polarization: Basic Radar Products',
+            'Dual Polarization: Advanced Radar Products'
+          ],
+          checkbox: [
+            'Audio',
+            'Content',
+            'Format',
+            'Time to complete'
+          ]
         },
-        tab3: {
-          field1: '',
-          field2: ''
-        },
-        data: {
-          tab1: {
-            stated_objectives: {
-              required: true,
-              hasError: false,
-              value: '',
-              data: [
-                'Radar Refresher',
-                'S-Band',
-                'X-Band',
-                'S/C/X-Band Comparison',
-                'Dual-Polarization Fundamentals',
-                'Dual Polarization: Basic Radar Products',
-                'Dual Polarization: Advanced Radar Products'
-              ],
-            },
-            specific_courses: {
-              required: false,
-              hasError: false,
-              value: '',
-              data: [
-                'Radar Refresher',
-                'S-Band',
-                'X-Band',
-                'S/C/X-Band Comparison',
-                'Dual-Polarization Fundamentals',
-                'Dual Polarization: Basic Radar Products',
-                'Dual Polarization: Advanced Radar Products'
-              ],
-            }
-          },
-          tab2: {
-            topic_depth: {
-              required: true,
-              hasError: false,
-              value: '',
-              data: [
-                'Radar Refresher',
-                'S-Band',
-                'X-Band',
-                'S/C/X-Band Comparison',
-                'Dual-Polarization Fundamentals',
-                'Dual Polarization: Basic Radar Products',
-                'Dual Polarization: Advanced Radar Products'
-              ],
-            },
-            specific_courses: {
-              required: false,
-              hasError: false,
-              value: '',
-              data: [
-                'Radar Refresher',
-                'S-Band',
-                'X-Band',
-                'S/C/X-Band Comparison',
-                'Dual-Polarization Fundamentals',
-                'Dual Polarization: Basic Radar Products',
-                'Dual Polarization: Advanced Radar Products'
-              ],
-            }
-          }
-        }
+        question4Options: [
+          'Radar Refresher',
+          'S-Band',
+          'X-Band',
+          'S/C/X-Band Comparison',
+          'Dual-Polarization Fundamentals',
+          'Dual Polarization: Basic Radar Products',
+          'Dual Polarization: Advanced Radar Products'
+        ],
+        question5Options: [
+          'Yes',
+          'No',
+        ],
+        question6Options: [
+          'Too little',
+          'Too much',
+          'Just right'
+        ]
       }
     },
 
@@ -404,147 +403,95 @@
         window.events.$emit('changed', tab)
       },
 
-      validate () {
-        let data = {}
+      submit () {
+        this.isSubmitting = true
 
-        data = flattenObject(this.data, 1, '')
-      },
-
-      specificSelect () {
-        this.specificCoursesCourseFeedback['name'] = this.specific_courses
-
-        this.specificCoursesCourseFeedbackActive = true
-      },
-
-      addSpecificCourseFeedback () {
-        this.specificCoursesData.push(this.specificCoursesCourseFeedback)
-
-        this.specificCoursesThanks = true
-
-        this.specificCoursesCourseFeedbackActive = false
-
-        let index = this.data.tab1.specific_courses.data.findIndex(item => this.specific_courses === item)
-
-        this.data.tab1.specific_courses.data.splice(index, 1)
-
-        this.specific_courses = ''
-
-        this.specificCoursesCourseFeedback = {
-          name: '',
-          checkedOptions: [],
-          additionalFeedback: ''
-        }
-      },
-
-      clearSpecificCourseFeedback () {
-        this.specific_courses = ''
-
-        this.specificCoursesCourseFeedback = {
-          name: '',
-          checkedOptions: [],
-          additionalFeedback: ''
+        let submitData = {
+          question1: this.question1Data,
+          question2: this.question2Data,
+          question3: this.question3Data,
+          question4: this.question4Data,
+          question5: this.question5Data,
+          question6: this.question6Data,
+          question7: this.question7Data
         }
 
-        this.specificCoursesCourseFeedbackActive = false
+        console.log(submitData)
+
+        setTimeout(() => {
+          this.isSubmitting = false
+          this.isSuccess = true
+        }, 5000)
       },
 
-      statedObjectives () {
-        this.statedObjectivesCourseFeedback['name'] = this.stated_objectives
+      question1Select () {
+        this.question1Item['name'] = this.question1Model
 
-        this.statedObjectivesCourseFeedbackActive = true
+        this.question1ItemActive = true
       },
 
-      addStatedObjectivesFeedback () {
-        this.statedObjectivesData.push(this.statedObjectivesCourseFeedback)
+      addQuestion1Data () {
+        this.question1Data.push(this.question1Item)
 
-        this.statedObjectivesThanks = true
+        this.question1Thanks = true
 
-        this.statedObjectivesCourseFeedbackActive = false
+        let index = this.question1Options.select.findIndex(item => this.question1Model === item)
 
-        let index = this.data.tab1.stated_objectives.data.findIndex(item => this.stated_objectives === item)
+        this.question1Options.select.splice(index, 1)
 
-        this.data.tab1.stated_objectives.data.splice(index, 1)
+        this.clearQuestion1Data()
+      },
 
-        this.stated_objectives = ''
+      clearQuestion1Data () {
+        this.question1Model = ''
 
-        this.statedObjectivesCourseFeedback = {
+        this.question1Item = {
           name: '',
-          checkedOptions: [],
-          additionalFeedback: ''
-        }
-      },
-
-      clearStatedObjectivesFeedback () {
-        this.stated_objectives = ''
-
-        this.statedObjectivesCourseFeedback = {
-          name: '',
-          checkedOptions: [],
-          additionalFeedback: ''
+          options: [],
+          comments: ''
         }
 
-        this.statedObjectivesCourseFeedbackActive = false
+        this.question1ItemActive = false
       },
 
-      addTopic () {
-        this.topicsData.push(this.additional_topic)
+      question2Select () {
+        this.question2Item['name'] = this.question2Model
 
-        this.topicsThanks = true
+        this.question2ItemActive = true
+      },
 
-        this.additional_topic = ''
+      addQuestion2Data () {
+        this.question2Data.push(this.question2Item)
+
+        this.question2Thanks = true
+
+        let index = this.question2Options.select.findIndex(item => this.question2Model === item)
+
+        this.question2Options.select.splice(index, 1)
+
+        this.clearQuestion2Data()
+      },
+
+      clearQuestion2Data () {
+        this.question2Model = ''
+
+        this.question2Item = {
+          name: '',
+          options: [],
+          comments: ''
+        }
+
+        this.question2ItemActive = false
+      },
+
+      addQuestion3Data () {
+        this.question3Data.push(this.question3Model)
+
+        this.question3Thanks = true
+
+        this.question3Model = ''
       }
-    },
-
-    // watch: {
-    //   tab1: {
-    //     handler(val, oldVal) {
-    //       if (this.tab1.field1 !== '' && this.tab1.field2 !== '') {
-    //         window.events.$emit('filled', {
-    //           tab: 'tab1',
-    //           filled: true
-    //         })
-    //       } else {
-    //         window.events.$emit('filled', {
-    //           tab: 'tab1',
-    //           filled: false
-    //         })
-    //       }
-    //     },
-    //     deep:true
-    //   },
-    //   tab2: {
-    //     handler(val, oldVal) {
-    //       if (this.tab2.field1 !== '' && this.tab2.field2 !== '') {
-    //         window.events.$emit('filled', {
-    //           tab: 'tab2',
-    //           filled: true
-    //         })
-    //       } else {
-    //         window.events.$emit('filled', {
-    //           tab: 'tab2',
-    //           filled: false
-    //         })
-    //       }
-    //     },
-    //     deep:true
-    //   },
-    //   tab3: {
-    //     handler(val, oldVal) {
-    //       if (this.tab3.field1 !== '' && this.tab3.field2 !== '') {
-    //         window.events.$emit('filled', {
-    //           tab: 'tab3',
-    //           filled: true
-    //         })
-    //       } else {
-    //         window.events.$emit('filled', {
-    //           tab: 'tab3',
-    //           filled: false
-    //         })
-    //       }
-    //     },
-    //     deep:true
-    //   },
-    // },
+    }
   }
 </script>
 

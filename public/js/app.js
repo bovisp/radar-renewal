@@ -31273,6 +31273,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -31285,84 +31304,56 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   data: function data() {
     return {
-      stated_objectives: '',
-      specific_courses: '',
-      additional_topic: '',
+      question1Model: '',
+      question2Model: '',
+      question3Model: '',
 
-      specificCoursesData: [],
-      statedObjectivesData: [],
-      topicsData: [],
-      topicDepthData: {
-        topics: [],
+      question1Data: [],
+      question2Data: [],
+      question3Data: [],
+      question4Data: {
+        options: [],
         comments: ''
       },
-      pathsHelpfulData: {
-        checkedOptions: '',
+      question5Data: {
+        options: '',
         comments: ''
       },
-      overallLengthData: '',
-      improveCourseData: '',
+      question6Data: '',
+      question7Data: '',
 
-      specificCoursesCourseFeedback: {
+      question1Item: {
         name: '',
-        checkedOptions: [],
-        additionalFeedback: ''
+        options: [],
+        comments: ''
       },
-      statedObjectivesCourseFeedback: {
+      question2Item: {
         name: '',
-        checkedOptions: [],
-        additionalFeedback: ''
+        options: [],
+        comments: ''
       },
 
-      specificCoursesCourseFeedbackActive: false,
-      statedObjectivesCourseFeedbackActive: false,
+      question1ItemActive: false,
+      question2ItemActive: false,
 
-      specificCoursesThanks: false,
-      statedObjectivesThanks: false,
-      topicsThanks: false,
+      question1Thanks: false,
+      question2Thanks: false,
+      question3Thanks: false,
 
-      tab1: {
-        field1: '',
-        field2: ''
+      isSubmitting: false,
+      isSuccess: false,
+
+      question1Options: {
+        select: ['Radar Refresher', 'S-Band', 'X-Band', 'S/C/X-Band Comparison', 'Dual-Polarization Fundamentals', 'Dual Polarization: Basic Radar Products', 'Dual Polarization: Advanced Radar Products'],
+        radio: ['Yes', 'No', 'Partially']
       },
-      tab2: {
-        field1: '',
-        field2: ''
+      question2Options: {
+        select: ['Radar Refresher', 'S-Band', 'X-Band', 'S/C/X-Band Comparison', 'Dual-Polarization Fundamentals', 'Dual Polarization: Basic Radar Products', 'Dual Polarization: Advanced Radar Products'],
+        checkbox: ['Audio', 'Content', 'Format', 'Time to complete']
       },
-      tab3: {
-        field1: '',
-        field2: ''
-      },
-      data: {
-        tab1: {
-          stated_objectives: {
-            required: true,
-            hasError: false,
-            value: '',
-            data: ['Radar Refresher', 'S-Band', 'X-Band', 'S/C/X-Band Comparison', 'Dual-Polarization Fundamentals', 'Dual Polarization: Basic Radar Products', 'Dual Polarization: Advanced Radar Products']
-          },
-          specific_courses: {
-            required: false,
-            hasError: false,
-            value: '',
-            data: ['Radar Refresher', 'S-Band', 'X-Band', 'S/C/X-Band Comparison', 'Dual-Polarization Fundamentals', 'Dual Polarization: Basic Radar Products', 'Dual Polarization: Advanced Radar Products']
-          }
-        },
-        tab2: {
-          topic_depth: {
-            required: true,
-            hasError: false,
-            value: '',
-            data: ['Radar Refresher', 'S-Band', 'X-Band', 'S/C/X-Band Comparison', 'Dual-Polarization Fundamentals', 'Dual Polarization: Basic Radar Products', 'Dual Polarization: Advanced Radar Products']
-          },
-          specific_courses: {
-            required: false,
-            hasError: false,
-            value: '',
-            data: ['Radar Refresher', 'S-Band', 'X-Band', 'S/C/X-Band Comparison', 'Dual-Polarization Fundamentals', 'Dual Polarization: Basic Radar Products', 'Dual Polarization: Advanced Radar Products']
-          }
-        }
-      }
+      question4Options: ['Radar Refresher', 'S-Band', 'X-Band', 'S/C/X-Band Comparison', 'Dual-Polarization Fundamentals', 'Dual Polarization: Basic Radar Products', 'Dual Polarization: Advanced Radar Products'],
+      question5Options: ['Yes', 'No'],
+      question6Options: ['Too little', 'Too much', 'Just right']
     };
   },
 
@@ -31371,148 +31362,98 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     change: function change(tab) {
       window.events.$emit('changed', tab);
     },
-    validate: function validate() {
-      var data = {};
-
-      data = flattenObject(this.data, 1, '');
-    },
-    specificSelect: function specificSelect() {
-      this.specificCoursesCourseFeedback['name'] = this.specific_courses;
-
-      this.specificCoursesCourseFeedbackActive = true;
-    },
-    addSpecificCourseFeedback: function addSpecificCourseFeedback() {
+    submit: function submit() {
       var _this = this;
 
-      this.specificCoursesData.push(this.specificCoursesCourseFeedback);
+      this.isSubmitting = true;
 
-      this.specificCoursesThanks = true;
-
-      this.specificCoursesCourseFeedbackActive = false;
-
-      var index = this.data.tab1.specific_courses.data.findIndex(function (item) {
-        return _this.specific_courses === item;
-      });
-
-      this.data.tab1.specific_courses.data.splice(index, 1);
-
-      this.specific_courses = '';
-
-      this.specificCoursesCourseFeedback = {
-        name: '',
-        checkedOptions: [],
-        additionalFeedback: ''
-      };
-    },
-    clearSpecificCourseFeedback: function clearSpecificCourseFeedback() {
-      this.specific_courses = '';
-
-      this.specificCoursesCourseFeedback = {
-        name: '',
-        checkedOptions: [],
-        additionalFeedback: ''
+      var submitData = {
+        question1: this.question1Data,
+        question2: this.question2Data,
+        question3: this.question3Data,
+        question4: this.question4Data,
+        question5: this.question5Data,
+        question6: this.question6Data,
+        question7: this.question7Data
       };
 
-      this.specificCoursesCourseFeedbackActive = false;
-    },
-    statedObjectives: function statedObjectives() {
-      this.statedObjectivesCourseFeedback['name'] = this.stated_objectives;
+      console.log(submitData);
 
-      this.statedObjectivesCourseFeedbackActive = true;
+      setTimeout(function () {
+        _this.isSubmitting = false;
+        _this.isSuccess = true;
+      }, 5000);
     },
-    addStatedObjectivesFeedback: function addStatedObjectivesFeedback() {
+    question1Select: function question1Select() {
+      this.question1Item['name'] = this.question1Model;
+
+      this.question1ItemActive = true;
+    },
+    addQuestion1Data: function addQuestion1Data() {
       var _this2 = this;
 
-      this.statedObjectivesData.push(this.statedObjectivesCourseFeedback);
+      this.question1Data.push(this.question1Item);
 
-      this.statedObjectivesThanks = true;
+      this.question1Thanks = true;
 
-      this.statedObjectivesCourseFeedbackActive = false;
-
-      var index = this.data.tab1.stated_objectives.data.findIndex(function (item) {
-        return _this2.stated_objectives === item;
+      var index = this.question1Options.select.findIndex(function (item) {
+        return _this2.question1Model === item;
       });
 
-      this.data.tab1.stated_objectives.data.splice(index, 1);
+      this.question1Options.select.splice(index, 1);
 
-      this.stated_objectives = '';
-
-      this.statedObjectivesCourseFeedback = {
-        name: '',
-        checkedOptions: [],
-        additionalFeedback: ''
-      };
+      this.clearQuestion1Data();
     },
-    clearStatedObjectivesFeedback: function clearStatedObjectivesFeedback() {
-      this.stated_objectives = '';
+    clearQuestion1Data: function clearQuestion1Data() {
+      this.question1Model = '';
 
-      this.statedObjectivesCourseFeedback = {
+      this.question1Item = {
         name: '',
-        checkedOptions: [],
-        additionalFeedback: ''
+        options: [],
+        comments: ''
       };
 
-      this.statedObjectivesCourseFeedbackActive = false;
+      this.question1ItemActive = false;
     },
-    addTopic: function addTopic() {
-      this.topicsData.push(this.additional_topic);
+    question2Select: function question2Select() {
+      this.question2Item['name'] = this.question2Model;
 
-      this.topicsThanks = true;
+      this.question2ItemActive = true;
+    },
+    addQuestion2Data: function addQuestion2Data() {
+      var _this3 = this;
 
-      this.additional_topic = '';
+      this.question2Data.push(this.question2Item);
+
+      this.question2Thanks = true;
+
+      var index = this.question2Options.select.findIndex(function (item) {
+        return _this3.question2Model === item;
+      });
+
+      this.question2Options.select.splice(index, 1);
+
+      this.clearQuestion2Data();
+    },
+    clearQuestion2Data: function clearQuestion2Data() {
+      this.question2Model = '';
+
+      this.question2Item = {
+        name: '',
+        options: [],
+        comments: ''
+      };
+
+      this.question2ItemActive = false;
+    },
+    addQuestion3Data: function addQuestion3Data() {
+      this.question3Data.push(this.question3Model);
+
+      this.question3Thanks = true;
+
+      this.question3Model = '';
     }
   }
-
-  // watch: {
-  //   tab1: {
-  //     handler(val, oldVal) {
-  //       if (this.tab1.field1 !== '' && this.tab1.field2 !== '') {
-  //         window.events.$emit('filled', {
-  //           tab: 'tab1',
-  //           filled: true
-  //         })
-  //       } else {
-  //         window.events.$emit('filled', {
-  //           tab: 'tab1',
-  //           filled: false
-  //         })
-  //       }
-  //     },
-  //     deep:true
-  //   },
-  //   tab2: {
-  //     handler(val, oldVal) {
-  //       if (this.tab2.field1 !== '' && this.tab2.field2 !== '') {
-  //         window.events.$emit('filled', {
-  //           tab: 'tab2',
-  //           filled: true
-  //         })
-  //       } else {
-  //         window.events.$emit('filled', {
-  //           tab: 'tab2',
-  //           filled: false
-  //         })
-  //       }
-  //     },
-  //     deep:true
-  //   },
-  //   tab3: {
-  //     handler(val, oldVal) {
-  //       if (this.tab3.field1 !== '' && this.tab3.field2 !== '') {
-  //         window.events.$emit('filled', {
-  //           tab: 'tab3',
-  //           filled: true
-  //         })
-  //       } else {
-  //         window.events.$emit('filled', {
-  //           tab: 'tab3',
-  //           filled: false
-  //         })
-  //       }
-  //     },
-  //     deep:true
-  //   },
-  // },
 });
 
 /***/ }),
@@ -31818,7 +31759,19 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticStyle: { position: "relative" } }, [
+    _vm.isSubmitting || _vm.isSuccess
+      ? _c("div", { staticClass: "overlay" })
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.isSubmitting && !_vm.isSuccess
+      ? _c("div", { staticClass: "submitting" }, [_vm._m(0)])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.isSuccess
+      ? _c("div", { staticClass: "success" }, [_vm._m(1)])
+      : _vm._e(),
+    _vm._v(" "),
     _c(
       "form",
       { staticClass: "ui form" },
@@ -31836,175 +31789,104 @@ var render = function() {
                 }
               },
               [
-                _c("div", { staticClass: "field" }, [
-                  _c("p", [
-                    _vm._v(
-                      "The following questions will evaluate how effectively the course met the learning objectives."
-                    )
-                  ])
+                _c("p", [
+                  _vm._v(
+                    "The following questions will evaluate how effectively the course met the learning objectives."
+                  )
+                ]),
+                _vm._v(" "),
+                _c("h4", { staticClass: "ui dividing header" }, [
+                  _vm._v(
+                    "1.\tHow well did each course meet the stated objectives?"
+                  )
                 ]),
                 _vm._v(" "),
                 _c(
                   "div",
                   { staticClass: "field" },
                   [
-                    _c("label", { attrs: { for: "stated_objectives" } }, [
-                      _vm._v(
-                        "1.\tHow well did each course meet the stated objectives?"
-                      )
-                    ]),
-                    _vm._v(" "),
                     _c("multiselect", {
                       attrs: {
-                        options: _vm.data.tab1.stated_objectives.data,
+                        options: _vm.question1Options.select,
                         searchable: false,
                         "close-on-select": true,
                         "show-labels": false,
-                        placeholder: "Choose a course...",
-                        id: "stated_objectives"
+                        placeholder: "Choose a course..."
                       },
                       on: {
-                        close: _vm.statedObjectives,
+                        close: _vm.question1Select,
                         open: function($event) {
-                          _vm.statedObjectivesThanks = false
+                          _vm.question1Thanks = false
                         }
                       },
                       model: {
-                        value: _vm.stated_objectives,
+                        value: _vm.question1Model,
                         callback: function($$v) {
-                          _vm.stated_objectives = $$v
+                          _vm.question1Model = $$v
                         },
-                        expression: "stated_objectives"
+                        expression: "question1Model"
                       }
                     })
                   ],
                   1
                 ),
                 _vm._v(" "),
-                _vm.statedObjectivesCourseFeedbackActive
+                _vm.question1ItemActive
                   ? [
-                      _c("h4", { staticClass: "ui dividing header" }, [
+                      _c("h5", { staticClass: "ui header" }, [
                         _vm._v(
-                          'Did "' +
-                            _vm._s(_vm.statedObjectivesCourseFeedback.name) +
-                            '" successfully meet the learning objectives?'
+                          'Did the "' +
+                            _vm._s(_vm.question1Item.name) +
+                            '" course successfully meet the learning objectives?'
                         )
                       ]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "inline fields" }, [
-                        _c("label", [_vm._v("Please select one:")]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "field" }, [
-                          _c("div", { staticClass: "ui radio checkbox" }, [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value:
-                                    _vm.statedObjectivesCourseFeedback
-                                      .checkedOptions,
-                                  expression:
-                                    "statedObjectivesCourseFeedback.checkedOptions"
-                                }
-                              ],
-                              attrs: { type: "radio", value: "Yes" },
-                              domProps: {
-                                checked: _vm._q(
-                                  _vm.statedObjectivesCourseFeedback
-                                    .checkedOptions,
-                                  "Yes"
-                                )
-                              },
-                              on: {
-                                change: function($event) {
-                                  _vm.$set(
-                                    _vm.statedObjectivesCourseFeedback,
-                                    "checkedOptions",
-                                    "Yes"
-                                  )
-                                }
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("label", [_vm._v("Yes")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "field" }, [
-                          _c("div", { staticClass: "ui radio checkbox" }, [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value:
-                                    _vm.statedObjectivesCourseFeedback
-                                      .checkedOptions,
-                                  expression:
-                                    "statedObjectivesCourseFeedback.checkedOptions"
-                                }
-                              ],
-                              attrs: { type: "radio", value: "No" },
-                              domProps: {
-                                checked: _vm._q(
-                                  _vm.statedObjectivesCourseFeedback
-                                    .checkedOptions,
-                                  "No"
-                                )
-                              },
-                              on: {
-                                change: function($event) {
-                                  _vm.$set(
-                                    _vm.statedObjectivesCourseFeedback,
-                                    "checkedOptions",
-                                    "No"
-                                  )
-                                }
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("label", [_vm._v("No")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "field" }, [
-                          _c("div", { staticClass: "ui radio checkbox" }, [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value:
-                                    _vm.statedObjectivesCourseFeedback
-                                      .checkedOptions,
-                                  expression:
-                                    "statedObjectivesCourseFeedback.checkedOptions"
-                                }
-                              ],
-                              attrs: { type: "radio", value: "Partially" },
-                              domProps: {
-                                checked: _vm._q(
-                                  _vm.statedObjectivesCourseFeedback
-                                    .checkedOptions,
-                                  "Partially"
-                                )
-                              },
-                              on: {
-                                change: function($event) {
-                                  _vm.$set(
-                                    _vm.statedObjectivesCourseFeedback,
-                                    "checkedOptions",
-                                    "Partially"
-                                  )
-                                }
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("label", [_vm._v("Partially")])
-                          ])
-                        ])
-                      ]),
+                      _c(
+                        "div",
+                        { staticClass: "inline fields" },
+                        [
+                          _c("p", [_vm._v("Please select one:")]),
+                          _vm._v(" "),
+                          _vm._l(_vm.question1Options.radio, function(option) {
+                            return _c("div", { staticClass: "field" }, [
+                              _c("div", { staticClass: "ui radio checkbox" }, [
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.question1Item.options,
+                                      expression: "question1Item.options"
+                                    }
+                                  ],
+                                  attrs: { type: "radio", id: option },
+                                  domProps: {
+                                    value: option,
+                                    checked: _vm._q(
+                                      _vm.question1Item.options,
+                                      option
+                                    )
+                                  },
+                                  on: {
+                                    change: function($event) {
+                                      _vm.$set(
+                                        _vm.question1Item,
+                                        "options",
+                                        option
+                                      )
+                                    }
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("label", { attrs: { for: option } }, [
+                                  _vm._v(_vm._s(option))
+                                ])
+                              ])
+                            ])
+                          })
+                        ],
+                        2
+                      ),
                       _vm._v(" "),
                       _c("div", { staticClass: "field" }, [
                         _c("label", [_vm._v("Comments")]),
@@ -32014,26 +31896,19 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value:
-                                _vm.statedObjectivesCourseFeedback
-                                  .additionalFeedback,
-                              expression:
-                                "statedObjectivesCourseFeedback.additionalFeedback"
+                              value: _vm.question1Item.comments,
+                              expression: "question1Item.comments"
                             }
                           ],
-                          domProps: {
-                            value:
-                              _vm.statedObjectivesCourseFeedback
-                                .additionalFeedback
-                          },
+                          domProps: { value: _vm.question1Item.comments },
                           on: {
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
                               }
                               _vm.$set(
-                                _vm.statedObjectivesCourseFeedback,
-                                "additionalFeedback",
+                                _vm.question1Item,
+                                "comments",
                                 $event.target.value
                               )
                             }
@@ -32050,7 +31925,7 @@ var render = function() {
                             on: {
                               click: function($event) {
                                 $event.preventDefault()
-                                return _vm.addStatedObjectivesFeedback($event)
+                                return _vm.addQuestion1Data($event)
                               }
                             }
                           },
@@ -32065,7 +31940,7 @@ var render = function() {
                             on: {
                               click: function($event) {
                                 $event.preventDefault()
-                                return _vm.clearStatedObjectivesFeedback($event)
+                                return _vm.clearQuestion1Data($event)
                               }
                             }
                           },
@@ -32075,365 +31950,155 @@ var render = function() {
                     ]
                   : _vm._e(),
                 _vm._v(" "),
-                _vm.statedObjectivesThanks
-                  ? _c("div", { staticClass: "field" }, [
-                      _c("div", { staticClass: "ui positive message" }, [
-                        _c("i", {
-                          staticClass: "close icon",
-                          on: {
-                            click: function($event) {
-                              _vm.statedObjectivesThanks = false
-                            }
+                _vm.question1Thanks
+                  ? _c("div", { staticClass: "ui positive message" }, [
+                      _c("i", {
+                        staticClass: "close icon",
+                        on: {
+                          click: function($event) {
+                            _vm.question1Thanks = false
                           }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "header" }, [
-                          _vm._v("\n              Thank you!\n            ")
-                        ]),
-                        _vm._v(" "),
-                        _c("p", [
-                          _vm._v(
-                            "If you would like to submit feedback on another course, please choose one from the dropdown menu above."
-                          )
-                        ])
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "header" }, [
+                        _vm._v("\n            Thank you!\n          ")
+                      ]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v(
+                          "If you would like to submit feedback on another course, please choose one from the dropdown menu above."
+                        )
                       ])
                     ])
                   : _vm._e(),
+                _vm._v(" "),
+                _c("h4", { staticClass: "ui dividing header" }, [
+                  _vm._v(
+                    "2.\tDo you have any suggestions that could help improve a specific module?"
+                  )
+                ]),
                 _vm._v(" "),
                 _c(
                   "div",
                   { staticClass: "field" },
                   [
-                    _c("label", { attrs: { for: "specific_courses" } }, [
-                      _vm._v(
-                        "2.\tDo you have any suggestions that could help improve a specific module?"
-                      )
-                    ]),
-                    _vm._v(" "),
                     _c("multiselect", {
                       attrs: {
-                        options: _vm.data.tab1.specific_courses.data,
+                        options: _vm.question2Options.select,
                         searchable: false,
                         "close-on-select": true,
                         "show-labels": false,
-                        placeholder: "Choose a course...",
-                        id: "specific_courses"
+                        placeholder: "Choose a course..."
                       },
                       on: {
-                        close: _vm.specificSelect,
+                        close: _vm.question2Select,
                         open: function($event) {
-                          _vm.specificCoursesThanks = false
+                          _vm.question2Thanks = false
                         }
                       },
                       model: {
-                        value: _vm.specific_courses,
+                        value: _vm.question2Model,
                         callback: function($$v) {
-                          _vm.specific_courses = $$v
+                          _vm.question2Model = $$v
                         },
-                        expression: "specific_courses"
+                        expression: "question2Model"
                       }
                     })
                   ],
                   1
                 ),
                 _vm._v(" "),
-                _vm.specificCoursesCourseFeedbackActive
+                _vm.question2ItemActive
                   ? [
-                      _c("h4", { staticClass: "ui dividing header" }, [
+                      _c("h5", { staticClass: "ui header" }, [
                         _vm._v(
                           "Additional Feedback for " +
-                            _vm._s(_vm.specificCoursesCourseFeedback.name)
+                            _vm._s(_vm.question2Item.name)
                         )
                       ]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "inline fields" }, [
-                        _c("label", [
-                          _vm._v("Select one or more of the following themes:")
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "field" }, [
-                          _c("div", { staticClass: "ui checkbox" }, [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value:
-                                    _vm.specificCoursesCourseFeedback
-                                      .checkedOptions,
-                                  expression:
-                                    "specificCoursesCourseFeedback.checkedOptions"
-                                }
-                              ],
-                              attrs: { type: "checkbox", value: "Audio" },
-                              domProps: {
-                                checked: Array.isArray(
-                                  _vm.specificCoursesCourseFeedback
-                                    .checkedOptions
-                                )
-                                  ? _vm._i(
-                                      _vm.specificCoursesCourseFeedback
-                                        .checkedOptions,
-                                      "Audio"
-                                    ) > -1
-                                  : _vm.specificCoursesCourseFeedback
-                                      .checkedOptions
-                              },
-                              on: {
-                                change: function($event) {
-                                  var $$a =
-                                      _vm.specificCoursesCourseFeedback
-                                        .checkedOptions,
-                                    $$el = $event.target,
-                                    $$c = $$el.checked ? true : false
-                                  if (Array.isArray($$a)) {
-                                    var $$v = "Audio",
-                                      $$i = _vm._i($$a, $$v)
-                                    if ($$el.checked) {
-                                      $$i < 0 &&
-                                        _vm.$set(
-                                          _vm.specificCoursesCourseFeedback,
-                                          "checkedOptions",
-                                          $$a.concat([$$v])
-                                        )
-                                    } else {
-                                      $$i > -1 &&
-                                        _vm.$set(
-                                          _vm.specificCoursesCourseFeedback,
-                                          "checkedOptions",
-                                          $$a
-                                            .slice(0, $$i)
-                                            .concat($$a.slice($$i + 1))
-                                        )
+                      _c(
+                        "div",
+                        { staticClass: "inline fields" },
+                        [
+                          _c("p", [
+                            _vm._v(
+                              "Select one or more of the following themes:"
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _vm._l(_vm.question2Options.checkbox, function(
+                            option
+                          ) {
+                            return _c("div", { staticClass: "field" }, [
+                              _c("div", { staticClass: "ui checkbox" }, [
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.question2Item.options,
+                                      expression: "question2Item.options"
                                     }
-                                  } else {
-                                    _vm.$set(
-                                      _vm.specificCoursesCourseFeedback,
-                                      "checkedOptions",
-                                      $$c
+                                  ],
+                                  attrs: { type: "checkbox", id: option },
+                                  domProps: {
+                                    value: option,
+                                    checked: Array.isArray(
+                                      _vm.question2Item.options
                                     )
-                                  }
-                                }
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("label", [_vm._v("Audio")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "field" }, [
-                          _c("div", { staticClass: "ui checkbox" }, [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value:
-                                    _vm.specificCoursesCourseFeedback
-                                      .checkedOptions,
-                                  expression:
-                                    "specificCoursesCourseFeedback.checkedOptions"
-                                }
-                              ],
-                              attrs: { type: "checkbox", value: "Content" },
-                              domProps: {
-                                checked: Array.isArray(
-                                  _vm.specificCoursesCourseFeedback
-                                    .checkedOptions
-                                )
-                                  ? _vm._i(
-                                      _vm.specificCoursesCourseFeedback
-                                        .checkedOptions,
-                                      "Content"
-                                    ) > -1
-                                  : _vm.specificCoursesCourseFeedback
-                                      .checkedOptions
-                              },
-                              on: {
-                                change: function($event) {
-                                  var $$a =
-                                      _vm.specificCoursesCourseFeedback
-                                        .checkedOptions,
-                                    $$el = $event.target,
-                                    $$c = $$el.checked ? true : false
-                                  if (Array.isArray($$a)) {
-                                    var $$v = "Content",
-                                      $$i = _vm._i($$a, $$v)
-                                    if ($$el.checked) {
-                                      $$i < 0 &&
+                                      ? _vm._i(
+                                          _vm.question2Item.options,
+                                          option
+                                        ) > -1
+                                      : _vm.question2Item.options
+                                  },
+                                  on: {
+                                    change: function($event) {
+                                      var $$a = _vm.question2Item.options,
+                                        $$el = $event.target,
+                                        $$c = $$el.checked ? true : false
+                                      if (Array.isArray($$a)) {
+                                        var $$v = option,
+                                          $$i = _vm._i($$a, $$v)
+                                        if ($$el.checked) {
+                                          $$i < 0 &&
+                                            _vm.$set(
+                                              _vm.question2Item,
+                                              "options",
+                                              $$a.concat([$$v])
+                                            )
+                                        } else {
+                                          $$i > -1 &&
+                                            _vm.$set(
+                                              _vm.question2Item,
+                                              "options",
+                                              $$a
+                                                .slice(0, $$i)
+                                                .concat($$a.slice($$i + 1))
+                                            )
+                                        }
+                                      } else {
                                         _vm.$set(
-                                          _vm.specificCoursesCourseFeedback,
-                                          "checkedOptions",
-                                          $$a.concat([$$v])
+                                          _vm.question2Item,
+                                          "options",
+                                          $$c
                                         )
-                                    } else {
-                                      $$i > -1 &&
-                                        _vm.$set(
-                                          _vm.specificCoursesCourseFeedback,
-                                          "checkedOptions",
-                                          $$a
-                                            .slice(0, $$i)
-                                            .concat($$a.slice($$i + 1))
-                                        )
+                                      }
                                     }
-                                  } else {
-                                    _vm.$set(
-                                      _vm.specificCoursesCourseFeedback,
-                                      "checkedOptions",
-                                      $$c
-                                    )
                                   }
-                                }
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("label", [_vm._v("Content")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "field" }, [
-                          _c("div", { staticClass: "ui checkbox" }, [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value:
-                                    _vm.specificCoursesCourseFeedback
-                                      .checkedOptions,
-                                  expression:
-                                    "specificCoursesCourseFeedback.checkedOptions"
-                                }
-                              ],
-                              attrs: { type: "checkbox", value: "Format" },
-                              domProps: {
-                                checked: Array.isArray(
-                                  _vm.specificCoursesCourseFeedback
-                                    .checkedOptions
-                                )
-                                  ? _vm._i(
-                                      _vm.specificCoursesCourseFeedback
-                                        .checkedOptions,
-                                      "Format"
-                                    ) > -1
-                                  : _vm.specificCoursesCourseFeedback
-                                      .checkedOptions
-                              },
-                              on: {
-                                change: function($event) {
-                                  var $$a =
-                                      _vm.specificCoursesCourseFeedback
-                                        .checkedOptions,
-                                    $$el = $event.target,
-                                    $$c = $$el.checked ? true : false
-                                  if (Array.isArray($$a)) {
-                                    var $$v = "Format",
-                                      $$i = _vm._i($$a, $$v)
-                                    if ($$el.checked) {
-                                      $$i < 0 &&
-                                        _vm.$set(
-                                          _vm.specificCoursesCourseFeedback,
-                                          "checkedOptions",
-                                          $$a.concat([$$v])
-                                        )
-                                    } else {
-                                      $$i > -1 &&
-                                        _vm.$set(
-                                          _vm.specificCoursesCourseFeedback,
-                                          "checkedOptions",
-                                          $$a
-                                            .slice(0, $$i)
-                                            .concat($$a.slice($$i + 1))
-                                        )
-                                    }
-                                  } else {
-                                    _vm.$set(
-                                      _vm.specificCoursesCourseFeedback,
-                                      "checkedOptions",
-                                      $$c
-                                    )
-                                  }
-                                }
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("label", [_vm._v("Format")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "field" }, [
-                          _c("div", { staticClass: "ui checkbox" }, [
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value:
-                                    _vm.specificCoursesCourseFeedback
-                                      .checkedOptions,
-                                  expression:
-                                    "specificCoursesCourseFeedback.checkedOptions"
-                                }
-                              ],
-                              attrs: {
-                                type: "checkbox",
-                                value: "Time to complete"
-                              },
-                              domProps: {
-                                checked: Array.isArray(
-                                  _vm.specificCoursesCourseFeedback
-                                    .checkedOptions
-                                )
-                                  ? _vm._i(
-                                      _vm.specificCoursesCourseFeedback
-                                        .checkedOptions,
-                                      "Time to complete"
-                                    ) > -1
-                                  : _vm.specificCoursesCourseFeedback
-                                      .checkedOptions
-                              },
-                              on: {
-                                change: function($event) {
-                                  var $$a =
-                                      _vm.specificCoursesCourseFeedback
-                                        .checkedOptions,
-                                    $$el = $event.target,
-                                    $$c = $$el.checked ? true : false
-                                  if (Array.isArray($$a)) {
-                                    var $$v = "Time to complete",
-                                      $$i = _vm._i($$a, $$v)
-                                    if ($$el.checked) {
-                                      $$i < 0 &&
-                                        _vm.$set(
-                                          _vm.specificCoursesCourseFeedback,
-                                          "checkedOptions",
-                                          $$a.concat([$$v])
-                                        )
-                                    } else {
-                                      $$i > -1 &&
-                                        _vm.$set(
-                                          _vm.specificCoursesCourseFeedback,
-                                          "checkedOptions",
-                                          $$a
-                                            .slice(0, $$i)
-                                            .concat($$a.slice($$i + 1))
-                                        )
-                                    }
-                                  } else {
-                                    _vm.$set(
-                                      _vm.specificCoursesCourseFeedback,
-                                      "checkedOptions",
-                                      $$c
-                                    )
-                                  }
-                                }
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("label", [_vm._v("Time to complete")])
-                          ])
-                        ])
-                      ]),
+                                }),
+                                _vm._v(" "),
+                                _c("label", { attrs: { for: option } }, [
+                                  _vm._v(_vm._s(option))
+                                ])
+                              ])
+                            ])
+                          })
+                        ],
+                        2
+                      ),
                       _vm._v(" "),
                       _c("div", { staticClass: "field" }, [
                         _c("label", [
@@ -32447,26 +32112,19 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value:
-                                _vm.specificCoursesCourseFeedback
-                                  .additionalFeedback,
-                              expression:
-                                "specificCoursesCourseFeedback.additionalFeedback"
+                              value: _vm.question2Item.comments,
+                              expression: "question2Item.comments"
                             }
                           ],
-                          domProps: {
-                            value:
-                              _vm.specificCoursesCourseFeedback
-                                .additionalFeedback
-                          },
+                          domProps: { value: _vm.question2Item.comments },
                           on: {
                             input: function($event) {
                               if ($event.target.composing) {
                                 return
                               }
                               _vm.$set(
-                                _vm.specificCoursesCourseFeedback,
-                                "additionalFeedback",
+                                _vm.question2Item,
+                                "comments",
                                 $event.target.value
                               )
                             }
@@ -32483,7 +32141,7 @@ var render = function() {
                             on: {
                               click: function($event) {
                                 $event.preventDefault()
-                                return _vm.addSpecificCourseFeedback($event)
+                                return _vm.addQuestion2Data($event)
                               }
                             }
                           },
@@ -32498,7 +32156,7 @@ var render = function() {
                             on: {
                               click: function($event) {
                                 $event.preventDefault()
-                                return _vm.clearSpecificCourseFeedback($event)
+                                return _vm.clearQuestion2Data($event)
                               }
                             }
                           },
@@ -32508,14 +32166,14 @@ var render = function() {
                     ]
                   : _vm._e(),
                 _vm._v(" "),
-                _vm.specificCoursesThanks
+                _vm.question2Thanks
                   ? _c("div", { staticClass: "field" }, [
                       _c("div", { staticClass: "ui positive message" }, [
                         _c("i", {
                           staticClass: "close icon",
                           on: {
                             click: function($event) {
-                              _vm.specificCoursesThanks = false
+                              _vm.question2Thanks = false
                             }
                           }
                         }),
@@ -32567,42 +32225,41 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                !_vm.topicsThanks
+                _c("h4", { staticClass: "ui dividing header" }, [
+                  _vm._v(
+                    "3. Is there a topic that should be added to this course series?"
+                  )
+                ]),
+                _vm._v(" "),
+                !_vm.question3Thanks
                   ? _c("div", { staticClass: "field" }, [
-                      _c("label", { attrs: { for: "additionalTopic" } }, [
-                        _vm._v(
-                          "3. Is there a topic that should be added to this course?"
-                        )
-                      ]),
-                      _vm._v(" "),
                       _c("input", {
                         directives: [
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.additional_topic,
-                            expression: "additional_topic"
+                            value: _vm.question3Model,
+                            expression: "question3Model"
                           }
                         ],
                         attrs: {
                           type: "text",
-                          placeholder: "Type a topic description...",
-                          id: "additionalTopic"
+                          placeholder: "Type a topic description..."
                         },
-                        domProps: { value: _vm.additional_topic },
+                        domProps: { value: _vm.question3Model },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
-                            _vm.additional_topic = $event.target.value
+                            _vm.question3Model = $event.target.value
                           }
                         }
                       })
                     ])
                   : _vm._e(),
                 _vm._v(" "),
-                _vm.additional_topic.length > 0
+                _vm.question3Model.length > 0
                   ? [
                       _c("div", { staticClass: "field" }, [
                         _c(
@@ -32613,7 +32270,7 @@ var render = function() {
                             on: {
                               click: function($event) {
                                 $event.preventDefault()
-                                return _vm.addTopic($event)
+                                return _vm.addQuestion3Data($event)
                               }
                             }
                           },
@@ -32623,14 +32280,14 @@ var render = function() {
                     ]
                   : _vm._e(),
                 _vm._v(" "),
-                _vm.topicsThanks
+                _vm.question3Thanks
                   ? _c("div", { staticClass: "field" }, [
                       _c("div", { staticClass: "ui positive message" }, [
                         _c("i", {
                           staticClass: "close icon",
                           on: {
                             click: function($event) {
-                              _vm.topicsThanks = false
+                              _vm.question3Thanks = false
                             }
                           }
                         }),
@@ -32650,7 +32307,7 @@ var render = function() {
                               on: {
                                 click: function($event) {
                                   $event.preventDefault()
-                                  _vm.topicsThanks = false
+                                  _vm.question3Thanks = false
                                 }
                               }
                             },
@@ -32661,15 +32318,13 @@ var render = function() {
                     ])
                   : _vm._e(),
                 _vm._v(" "),
-                _c("div", { staticClass: "field" }, [
-                  _c("h5", [
-                    _vm._v(
-                      "4. Was there a topic(s) that should be dealt with in more depth?"
-                    )
-                  ])
+                _c("h4", { staticClass: "ui dividing header" }, [
+                  _vm._v(
+                    "4. Was there a topic(s) that should be dealt with in more depth?"
+                  )
                 ]),
                 _vm._v(" "),
-                _vm._l(_vm.data.tab2.topic_depth.data, function(course) {
+                _vm._l(_vm.question4Options, function(option) {
                   return _c("div", { staticClass: "field" }, [
                     _c("div", { staticClass: "ui checkbox" }, [
                       _c("input", {
@@ -32677,48 +32332,48 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.topicDepthData.topics,
-                            expression: "topicDepthData.topics"
+                            value: _vm.question4Data.options,
+                            expression: "question4Data.options"
                           }
                         ],
                         attrs: { type: "checkbox" },
                         domProps: {
-                          value: course,
-                          checked: Array.isArray(_vm.topicDepthData.topics)
-                            ? _vm._i(_vm.topicDepthData.topics, course) > -1
-                            : _vm.topicDepthData.topics
+                          value: option,
+                          checked: Array.isArray(_vm.question4Data.options)
+                            ? _vm._i(_vm.question4Data.options, option) > -1
+                            : _vm.question4Data.options
                         },
                         on: {
                           change: function($event) {
-                            var $$a = _vm.topicDepthData.topics,
+                            var $$a = _vm.question4Data.options,
                               $$el = $event.target,
                               $$c = $$el.checked ? true : false
                             if (Array.isArray($$a)) {
-                              var $$v = course,
+                              var $$v = option,
                                 $$i = _vm._i($$a, $$v)
                               if ($$el.checked) {
                                 $$i < 0 &&
                                   _vm.$set(
-                                    _vm.topicDepthData,
-                                    "topics",
+                                    _vm.question4Data,
+                                    "options",
                                     $$a.concat([$$v])
                                   )
                               } else {
                                 $$i > -1 &&
                                   _vm.$set(
-                                    _vm.topicDepthData,
-                                    "topics",
+                                    _vm.question4Data,
+                                    "options",
                                     $$a.slice(0, $$i).concat($$a.slice($$i + 1))
                                   )
                               }
                             } else {
-                              _vm.$set(_vm.topicDepthData, "topics", $$c)
+                              _vm.$set(_vm.question4Data, "options", $$c)
                             }
                           }
                         }
                       }),
                       _vm._v(" "),
-                      _c("label", [_vm._v(_vm._s(course))])
+                      _c("label", [_vm._v(_vm._s(option))])
                     ])
                   ])
                 }),
@@ -32735,18 +32390,18 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.topicDepthData.comments,
-                        expression: "topicDepthData.comments"
+                        value: _vm.question4Data.comments,
+                        expression: "question4Data.comments"
                       }
                     ],
-                    domProps: { value: _vm.topicDepthData.comments },
+                    domProps: { value: _vm.question4Data.comments },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
                         _vm.$set(
-                          _vm.topicDepthData,
+                          _vm.question4Data,
                           "comments",
                           $event.target.value
                         )
@@ -32803,75 +32458,44 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "field" }, [
-                _c("h5", [
-                  _vm._v("5. Did you find the recommended paths helpful?")
-                ])
+              _c("h4", { staticClass: "ui dividing header" }, [
+                _vm._v("5. Did you find the recommended paths helpful?")
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "inline fields" }, [
-                _c("div", { staticClass: "field" }, [
-                  _c("div", { staticClass: "ui radio checkbox" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.pathsHelpfulData.checkedOptions,
-                          expression: "pathsHelpfulData.checkedOptions"
+              _c(
+                "div",
+                { staticClass: "inline fields" },
+                _vm._l(_vm.question5Options, function(option) {
+                  return _c("div", { staticClass: "field" }, [
+                    _c("div", { staticClass: "ui radio checkbox" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.question5Data.options,
+                            expression: "question5Data.options"
+                          }
+                        ],
+                        attrs: { type: "radio", id: option },
+                        domProps: {
+                          value: option,
+                          checked: _vm._q(_vm.question5Data.options, option)
+                        },
+                        on: {
+                          change: function($event) {
+                            _vm.$set(_vm.question5Data, "options", option)
+                          }
                         }
-                      ],
-                      attrs: { type: "radio", value: "Yes" },
-                      domProps: {
-                        checked: _vm._q(
-                          _vm.pathsHelpfulData.checkedOptions,
-                          "Yes"
-                        )
-                      },
-                      on: {
-                        change: function($event) {
-                          _vm.$set(
-                            _vm.pathsHelpfulData,
-                            "checkedOptions",
-                            "Yes"
-                          )
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("label", [_vm._v("Yes")])
+                      }),
+                      _vm._v(" "),
+                      _c("label", { attrs: { for: option } }, [
+                        _vm._v(_vm._s(option))
+                      ])
+                    ])
                   ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "field" }, [
-                  _c("div", { staticClass: "ui radio checkbox" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.pathsHelpfulData.checkedOptions,
-                          expression: "pathsHelpfulData.checkedOptions"
-                        }
-                      ],
-                      attrs: { type: "radio", value: "No" },
-                      domProps: {
-                        checked: _vm._q(
-                          _vm.pathsHelpfulData.checkedOptions,
-                          "No"
-                        )
-                      },
-                      on: {
-                        change: function($event) {
-                          _vm.$set(_vm.pathsHelpfulData, "checkedOptions", "No")
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("label", [_vm._v("No")])
-                  ])
-                ])
-              ]),
+                })
+              ),
               _vm._v(" "),
               _c("div", { staticClass: "field" }, [
                 _c("label", [
@@ -32883,18 +32507,18 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.pathsHelpfulData.comments,
-                      expression: "pathsHelpfulData.comments"
+                      value: _vm.question5Data.comments,
+                      expression: "question5Data.comments"
                     }
                   ],
-                  domProps: { value: _vm.pathsHelpfulData.comments },
+                  domProps: { value: _vm.question5Data.comments },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
                       _vm.$set(
-                        _vm.pathsHelpfulData,
+                        _vm.question5Data,
                         "comments",
                         $event.target.value
                       )
@@ -32903,117 +32527,70 @@ var render = function() {
                 })
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "field" }, [
-                _c("h5", [
-                  _vm._v(
-                    "6. How did you find the overall length of the training material?"
-                  )
-                ])
+              _c("h4", { staticClass: "ui dividing header" }, [
+                _vm._v(
+                  "6. How did you find the overall length of the training material?"
+                )
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "inline fields" }, [
-                _c("div", { staticClass: "field" }, [
-                  _c("div", { staticClass: "ui radio checkbox" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.overallLengthData,
-                          expression: "overallLengthData"
+              _c(
+                "div",
+                { staticClass: "inline fields" },
+                _vm._l(_vm.question6Options, function(option) {
+                  return _c("div", { staticClass: "field" }, [
+                    _c("div", { staticClass: "ui radio checkbox" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.question6Data,
+                            expression: "question6Data"
+                          }
+                        ],
+                        attrs: { type: "radio", id: option },
+                        domProps: {
+                          value: option,
+                          checked: _vm._q(_vm.question6Data, option)
+                        },
+                        on: {
+                          change: function($event) {
+                            _vm.question6Data = option
+                          }
                         }
-                      ],
-                      attrs: { type: "radio", value: "Too little" },
-                      domProps: {
-                        checked: _vm._q(_vm.overallLengthData, "Too little")
-                      },
-                      on: {
-                        change: function($event) {
-                          _vm.overallLengthData = "Too little"
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("label", [_vm._v("Too little")])
+                      }),
+                      _vm._v(" "),
+                      _c("label", { attrs: { for: option } }, [
+                        _vm._v(_vm._s(option))
+                      ])
+                    ])
                   ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "field" }, [
-                  _c("div", { staticClass: "ui radio checkbox" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.overallLengthData,
-                          expression: "overallLengthData"
-                        }
-                      ],
-                      attrs: { type: "radio", value: "Too much" },
-                      domProps: {
-                        checked: _vm._q(_vm.overallLengthData, "Too much")
-                      },
-                      on: {
-                        change: function($event) {
-                          _vm.overallLengthData = "Too much"
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("label", [_vm._v("Too much")])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "field" }, [
-                  _c("div", { staticClass: "ui radio checkbox" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.overallLengthData,
-                          expression: "overallLengthData"
-                        }
-                      ],
-                      attrs: { type: "radio", value: "Just right" },
-                      domProps: {
-                        checked: _vm._q(_vm.overallLengthData, "Just right")
-                      },
-                      on: {
-                        change: function($event) {
-                          _vm.overallLengthData = "Just right"
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("label", [_vm._v("Just right")])
-                  ])
-                ])
+                })
+              ),
+              _vm._v(" "),
+              _c("h4", { staticClass: "ui dividing header" }, [
+                _vm._v(
+                  "7. Do you have any suggestions that could help improve the radar renewal course series?"
+                )
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "field" }, [
-                _c("label", [
-                  _vm._v(
-                    "7. Do you have any suggestions that could help improve the radar renewal course series?"
-                  )
-                ]),
-                _vm._v(" "),
                 _c("textarea", {
                   directives: [
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.improveCourseData,
-                      expression: "improveCourseData"
+                      value: _vm.question7Data,
+                      expression: "question7Data"
                     }
                   ],
-                  domProps: { value: _vm.improveCourseData },
+                  domProps: { value: _vm.question7Data },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.improveCourseData = $event.target.value
+                      _vm.question7Data = $event.target.value
                     }
                   }
                 })
@@ -33049,7 +32626,7 @@ var render = function() {
             on: {
               click: function($event) {
                 $event.preventDefault()
-                return _vm.validate($event)
+                return _vm.submit($event)
               }
             }
           },
@@ -33060,7 +32637,32 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "ui padded segment" }, [
+      _c("h4", { staticClass: "ui header" }, [
+        _vm._v("Submitting your feedback")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "loader" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "ui padded segment" }, [
+      _c("h4", { staticClass: "ui header" }, [
+        _vm._v("Success! Thanks for your feedback")
+      ]),
+      _vm._v(" "),
+      _c("i", { staticClass: "huge green check icon" })
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
