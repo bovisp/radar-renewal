@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="css/app.css">
     </head>
     <body>
-      <header class="ui basic masthead segment">
+      <header class="ui basic masthead segment" style="background-image: url('images/banner.jpg') !important;">
         <div class="ui container">
           <h1 class="mb-8">New radars are in range</h1>
 
