@@ -9,10 +9,22 @@
         <title>Laravel</title>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
 
         <link rel="stylesheet" href="css/app.css">
     </head>
     <body>
+      <header class="ui basic masthead segment">
+        <div class="ui container">
+          <h1 class="mb-8">New radars are in range</h1>
+
+          <div class="is-centered">
+            <button class="huge blue ui button mr-8">View courses</button>
+
+            <button class="huge blue basic ui button">Give feedback</button>
+          </div>
+        </div>
+      </header>
       <div class="ui container" id="app">
         <example-component></example-component>
       </div>
