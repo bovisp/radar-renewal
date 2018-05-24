@@ -40,7 +40,7 @@
         window.events.$on('changed', (tabName) => {
           let self = this
 
-          let tab = _.find(self.tabs, { title: tabName })
+          let tab = l_find(self.tabs, { title: tabName })
 
           this.selectTab(tab)
         })
