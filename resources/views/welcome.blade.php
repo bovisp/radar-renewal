@@ -14,20 +14,13 @@
         <link rel="stylesheet" href="css/app.css">
     </head>
     <body>
-      <header class="ui basic masthead segment" style="background-image: url('images/banner.jpg') !important;">
-        <div class="ui container">
-          <h1 class="mb-8">New radars are in range</h1>
+      @include('components.masthead')
 
-          <div class="is-centered">
-            <button class="huge blue ui button mr-8">View courses</button>
+      @include('components.introduction')
 
-            <button class="huge blue basic ui button">Give feedback</button>
-          </div>
-        </div>
-      </header>
-      <div class="ui container" id="app">
-        <example-component></example-component>
-      </div>
+      @include('components.courses')
+
+      @include('components.feedback')
 
       <script src="js/app.js"></script>
     </body>
