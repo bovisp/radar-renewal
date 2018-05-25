@@ -3,9 +3,9 @@
     <h1 class="mb-8">New radars are in range</h1>
 
     <div class="is-centered">
-      <button class="huge blue ui button mr-8">View courses</button>
+      <a href="#courses" class="huge blue ui button mr-8">View courses</a>
 
-      <button class="huge blue basic ui button">Give feedback</button>
+      <a href="#feedback" class="huge blue basic ui button">Give feedback</a>
     </div>
   </div>
 </header>

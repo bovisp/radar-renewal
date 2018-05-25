@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Laravel</title>
+        <title>Radar Renewal</title>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
@@ -24,6 +24,12 @@
 
       @include('components.feedback')
 
+      <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14/dist/smooth-scroll.polyfills.min.js"></script>
+      <script>
+        var scroll = new SmoothScroll('a[href*="#"]', {
+          speed: 700,
+        });
+      </script>
       <script src="js/app.js"></script>
     </body>
 </html>

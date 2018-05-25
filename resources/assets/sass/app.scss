@@ -166,6 +166,10 @@
   margin-top: 0 !important;
 }
 
+.mt-auto {
+  margin-top: auto !important;
+}
+
 .mr-8 {
   margin-right: 2rem !important;
 }
@@ -217,6 +221,10 @@
 
 .items-center {
   align-items: center;
+}
+
+.self-end {
+  align-self: flex-end;
 }
 
 @media only screen and (min-width: 360px) {
@@ -370,4 +378,10 @@
   @media screen and (min-width: 900px) {
     font-size: 5.5rem;
   }
+}
+
+.extra.list.content {
+  color: rgba(0, 0, 0, .4);
+  padding: 1rem;
+  border-top: 1px solid rgba(34, 36, 38, 0.15);
 }

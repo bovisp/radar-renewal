@@ -1,4 +1,4 @@
-<section class="ui container">
+<section class="ui container" id="courses">
   <h2 class="flow-header is-centered pb-16">Courses</h2>
 
   <div class="ui stackable three column grid">
@@ -169,7 +169,7 @@
         </div>
 
         <div class="content">
-          <a href="#" class="header" title="Register for this course now">Radar Renewal: Dual-Polarization Advanced Products</a>
+          <div class="header" title="Register for this course now">Radar Renewal: Dual-Polarization Advanced Products</div>
 
           <div class="meta">
             <strong>Estimated time to complete:</strong> 25-40 minutes
@@ -183,7 +183,7 @@
         <div class="extra content flex items-center">
           <i class="users icon" style="position: relative; top:-3px;"></i> <span>23 Registered</span>
 
-          <a href="#" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
+          <a href="#" class="blue basic ui button small ml-auto disabled" title="Register now">Coming soon</a>
         </div>
       </div>
     </div>
