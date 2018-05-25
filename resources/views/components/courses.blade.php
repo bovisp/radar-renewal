@@ -5,11 +5,11 @@
     <div class="column flex items-stretch">
       <div class="ui card">
         <div class="image">
-          <img src="https://picsum.photos/500/300?image=1056" alt="Radar Renewal: Radar Refresher image">
+          <img src="images/radar_refresher.jpg" alt="Radar Renewal: Radar Refresher image">
         </div>
 
         <div class="content">
-          <a href="#" class="header" title="Register for this course now">Radar Renewal: Radar Refresher</a>
+          <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=147" class="header" title="Register for this course now">Radar Renewal: Radar Refresher</a>
 
           <div class="meta">
             <strong>Estimated time to complete:</strong> xx-yy minutes
@@ -23,7 +23,7 @@
         <div class="extra content flex items-center">
           <i class="users icon" style="position: relative; top:-3px;"></i> <span>17 Registered</span>
 
-          <a href="#" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
+          <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=147" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
         </div>
       </div>
     </div>
@@ -31,11 +31,11 @@
     <div class="column flex items-stretch">
       <div class="ui card">
         <div class="image">
-          <img src="https://picsum.photos/500/300?image=1019" alt="Radar Renewal: S-Band image">
+          <img src="images/s_band.jpg" alt="Radar Renewal: S-Band image">
         </div>
 
         <div class="content">
-          <a href="#" class="header" title="Register for this course now">Radar Renewal: S-Band</a>
+          <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=154" class="header" title="Register for this course now">Radar Renewal: S-Band</a>
 
           <div class="meta">
             <strong>Estimated time to complete:</strong> xx-yy minutes
@@ -49,7 +49,7 @@
         <div class="extra content flex items-center">
           <i class="users icon" style="position: relative; top:-3px;"></i> <span>34 Registered</span>
 
-          <a href="#" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
+          <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=154" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
         </div>
       </div>
     </div>
@@ -57,11 +57,11 @@
     <div class="column flex items-stretch">
       <div class="ui card">
         <div class="image">
-          <img src="https://picsum.photos/500/300?image=1015" alt="Radar Renewal: X-Band image">
+          <img src="images/x_band.jpg" alt="Radar Renewal: X-Band image">
         </div>
 
         <div class="content">
-          <a href="#" class="header" title="Register for this course now">Radar Renewal: X-Band</a>
+          <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=145" class="header" title="Register for this course now">Radar Renewal: X-Band</a>
 
           <div class="meta">
             <strong>Estimated time to complete:</strong> 20-30 minutes
@@ -75,7 +75,7 @@
         <div class="extra content flex items-center">
           <i class="users icon" style="position: relative; top:-3px;"></i> <span>12 Registered</span>
 
-          <a href="#" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
+          <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=145" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
         </div>
       </div>
     </div>
@@ -85,11 +85,11 @@
     <div class="column flex items-stretch">
       <div class="ui card">
         <div class="image">
-          <img src="https://picsum.photos/500/300?image=903" alt="Radar Renewal: S/C/X-Band Comparison image">
+          <img src="images/s_c_x_band_comparison.jpg" alt="Radar Renewal: S/C/X-Band Comparison image">
         </div>
 
         <div class="content">
-          <a href="#" class="header" title="Register for this course now">Radar Renewal: S/C/X-Band Comparison</a>
+          <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=144" class="header" title="Register for this course now">Radar Renewal: S/C/X-Band Comparison</a>
 
           <div class="meta">
             <strong>Estimated time to complete:</strong> 25-40 minutes
@@ -103,7 +103,7 @@
         <div class="extra content flex items-center">
           <i class="users icon" style="position: relative; top:-3px;"></i> <span>29 Registered</span>
 
-          <a href="#" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
+          <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=144" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
         </div>
       </div>
     </div>
@@ -111,11 +111,11 @@
     <div class="column flex items-stretch">
       <div class="ui card">
         <div class="image">
-          <img src="https://picsum.photos/500/300?image=902" alt="Radar Renewal: Dual-Polarization Fundamentals image">
+          <img src="images/dual_polarization_fundamentals.jpg" alt="Radar Renewal: Dual-Polarization Fundamentals image">
         </div>
 
         <div class="content">
-          <a href="#" class="header" title="Register for this course now">Radar Renewal: Dual-Polarization Fundamentals</a>
+          <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=157" class="header" title="Register for this course now">Radar Renewal: Dual-Polarization Fundamentals</a>
 
           <div class="meta">
             <strong>Estimated time to complete:</strong> xx-yy minutes
@@ -129,7 +129,7 @@
         <div class="extra content flex items-center">
           <i class="users icon" style="position: relative; top:-3px;"></i> <span>30 Registered</span>
 
-          <a href="#" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
+          <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=157" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
         </div>
       </div>
     </div>
@@ -137,11 +137,11 @@
     <div class="column flex items-stretch">
       <div class="ui card">
         <div class="image">
-          <img src="https://picsum.photos/500/300?image=872" alt="Radar Renewal: Dual-Polarization Basic Radar Products image">
+          <img src="images/dual_polarization_basic_products.jpg" alt="Radar Renewal: Dual-Polarization Basic Radar Products image">
         </div>
 
         <div class="content">
-          <a href="#" class="header" title="Register for this course now">Radar Renewal: Dual-Polarization Basic Radar Products</a>
+          <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=148" class="header" title="Register for this course now">Radar Renewal: Dual-Polarization Basic Radar Products</a>
 
           <div class="meta">
             <strong>Estimated time to complete:</strong> xx-yy minutes
@@ -155,7 +155,7 @@
         <div class="extra content flex items-center">
           <i class="users icon" style="position: relative; top:-3px;"></i> <span>15 Registered</span>
 
-          <a href="#" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
+          <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=148" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
         </div>
       </div>
     </div>
@@ -165,7 +165,7 @@
     <div class="column flex items-stretch">
       <div class="ui card">
         <div class="image">
-          <img src="https://picsum.photos/500/300?image=847" alt="Radar Renewal: Dual-Polarization Advanced Products image">
+          <img src="images/dual_polarization_advanced_products.jpg" alt="Radar Renewal: Dual-Polarization Advanced Products image">
         </div>
 
         <div class="content">

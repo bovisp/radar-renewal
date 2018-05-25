@@ -18,27 +18,27 @@
 
         <div class="ui very relaxed divided list mt-0">
           <div class="item px-4" style="padding-top: 0.85714286em;">
-            Radar Renewal: Radar Refresher
+            <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=147">Radar Renewal: Radar Refresher</a>
           </div>
 
           <div class="item px-4">
-            Radar Renewal: S-Band
+            <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=154">Radar Renewal: S-Band</a>
           </div>
 
           <div class="item is-muted px-4">
-            Renewal: X-Band (Optional)
+            <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=145">Renewal: X-Band (Optional)</a>
           </div>
 
           <div class="item is-muted px-4">
-            Radar Renewal: S/C/X-Band Comparison (Optional)
+            <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=144">Radar Renewal: S/C/X-Band Comparison (Optional)</a>
           </div>
 
           <div class="item px-4">
-            Radar Renewal: Dual-Polarization Fundamentals
+            <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=157">Radar Renewal: Dual-Polarization Fundamentals</a>
           </div>
 
           <div class="item is-muted px-4">
-            Radar Renewal: Dual-Polarization Basic Products Radar (Optional)
+            <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=148">Radar Renewal: Dual-Polarization Basic Products Radar (Optional)</a>
           </div>
 
           <div class="item is-muted px-4" style="padding-bottom: 0.85714286em;">
@@ -62,27 +62,27 @@
 
         <div class="ui very relaxed divided list mt-0">
           <div class="item is-muted px-4" style="padding-top: 0.85714286em;">
-            Radar Renewal: Radar Refresher (Optional)
+            <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=147">Radar Renewal: Radar Refresher (Optional)</a>
           </div>
 
           <div class="item px-4">
-            Radar Renewal: S-Band
+            <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=154">Radar Renewal: S-Band</a>
           </div>
 
           <div class="item is-muted px-4">
-            Renewal: X-Band (Optional)
+            <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=145">Renewal: X-Band (Optional)</a>
           </div>
 
           <div class="item px-4">
-            Radar Renewal: S/C/X-Band Comparison
+            <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=144">Radar Renewal: S/C/X-Band Comparison</a>
           </div>
 
           <div class="item px-4">
-            Radar Renewal: Dual-Polarization Fundamentals
+            <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=157">Radar Renewal: Dual-Polarization Fundamentals</a>
           </div>
 
           <div class="item is-muted px-4">
-            Radar Renewal: Dual-Polarization Basic Products Radar (Optional)
+            <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=148">Radar Renewal: Dual-Polarization Basic Products Radar (Optional)</a>
           </div>
 
           <div class="item is-muted px-4" style="padding-bottom: 0.85714286em;">
@@ -94,7 +94,7 @@
 
     <div class="column flex items-stretch">
       <div class="ui segment p-0 m-0">
-        <h3 class="ui icon header pt-4 px-4 w-full">
+        <h3 class="ui icon header pt-4 px-4 w-full pb-6">
           <i class="cloud icon"></i>
 
           <div class="content">
@@ -106,27 +106,27 @@
 
         <div class="ui very relaxed divided list mt-0">
           <div class="item is-muted px-4" style="padding-top: 0.85714286em;">
-            Radar Renewal: Radar Refresher (Optional)
+            <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=147">Radar Renewal: Radar Refresher (Optional)</a>
           </div>
 
           <div class="item px-4">
-            Radar Renewal: S-Band
+            <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=154">Radar Renewal: S-Band</a>
           </div>
 
           <div class="item is-muted px-4">
-            Renewal: X-Band (Optional)
+            <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=145">Renewal: X-Band (Optional)</a>
           </div>
 
           <div class="item px-4">
-            Radar Renewal: S/C/X-Band Comparison
+            <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=144">Radar Renewal: S/C/X-Band Comparison</a>
           </div>
 
           <div class="item px-4">
-            Radar Renewal: Dual-Polarization Fundamentals
+            <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=157">Radar Renewal: Dual-Polarization Fundamentals</a>
           </div>
 
           <div class="item px-4">
-            Radar Renewal: Dual-Polarization Basic Products Radar
+            <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=148">Radar Renewal: Dual-Polarization Basic Products Radar</a>
           </div>
 
           <div class="item is-muted px-4" style="padding-bottom: 0.85714286em;">
@@ -138,7 +138,7 @@
 
     <div class="column flex items-stretch">
       <div class="ui segment p-0 m-0">
-        <h3 class="ui icon header pt-4 px-4">
+        <h3 class="ui icon header pt-4 px-4  pb-6">
           <i class="bolt icon"></i>
 
           <div class="content">
@@ -150,27 +150,27 @@
 
         <div class="ui very relaxed divided list mt-0">
           <div class="item is-muted px-4" style="padding-top: 0.85714286em;">
-            Radar Renewal: Radar Refresher (Optional)
+            <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=147">Radar Renewal: Radar Refresher (Optional)</a>
           </div>
 
           <div class="item px-4">
-            Radar Renewal: S-Band
+            <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=154">Radar Renewal: S-Band</a>
           </div>
 
           <div class="item is-muted px-4">
-            Renewal: X-Band (Optional)
+            <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=145">Renewal: X-Band (Optional)</a>
           </div>
 
           <div class="item px-4">
-            Radar Renewal: S/C/X-Band Comparison
+            <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=144">Radar Renewal: S/C/X-Band Comparison</a>
           </div>
 
           <div class="item px-4">
-            Radar Renewal: Dual-Polarization Fundamentals
+            <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=157">Radar Renewal: Dual-Polarization Fundamentals</a>
           </div>
 
           <div class="item px-4">
-            Radar Renewal: Dual-Polarization Basic Products Radar
+            <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=148">Radar Renewal: Dual-Polarization Basic Products Radar</a>
           </div>
 
           <div class="item px-4" style="padding-bottom: 0.85714286em;">
