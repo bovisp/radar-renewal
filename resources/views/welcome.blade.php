@@ -20,6 +20,8 @@
 
       @include('components.courses')
 
+      @include('components.paths')
+
       @include('components.feedback')
 
       <script src="js/app.js"></script>

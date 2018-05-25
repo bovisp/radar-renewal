@@ -205,8 +205,20 @@
   font-weight: 300;
 }
 
+.is-muted {
+  color: rgba(0, 0, 0, 0.4);
+}
+
 .mb-8 {
   margin-bottom: 2rem !important;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.mt-0 {
+  margin-top: 0 !important;
 }
 
 .mr-8 {
@@ -217,12 +229,33 @@
   margin-left: auto !important;
 }
 
+.m-0 {
+  margin: 0 !important;
+}
+
+.p-0 {
+  padding: 0 !important;
+}
+
+.pt-4 {
+  padding-top: 1rem !important;
+}
+
+.px-4 {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
 .pt-16 {
   padding-top: 4rem;
 }
 
 .pb-16 {
   padding-bottom: 4rem;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .flex {
