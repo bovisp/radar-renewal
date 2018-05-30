@@ -12,7 +12,7 @@
           <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=147" class="header" title="Register for this course now">Radar Renewal: Radar Refresher</a>
 
           <div class="meta">
-            <strong>Estimated time to complete:</strong> xx-yy minutes
+            <strong>Estimated time to complete:</strong> 15 minutes - 4 hours
           </div>
 
           <div class="description">
@@ -38,11 +38,11 @@
           <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=154" class="header" title="Register for this course now">Radar Renewal: S-Band</a>
 
           <div class="meta">
-            <strong>Estimated time to complete:</strong> xx-yy minutes
+            <strong>Estimated time to complete:</strong> 25-40 minutes
           </div>
 
           <div class="description">
-            Blah blah blah.
+            This course discusses the main advantages of a 10 cm wavelength radar as well as the limitations encountered with some of the Selex 1700s characteristics. It concludes by presenting the new radar scanning strategy underlying the many aspects that were taking under consideration.
           </div>
         </div>
 
@@ -68,7 +68,7 @@
           </div>
 
           <div class="description">
-            This course will provide an overview of X-Band radars in a Canadian context
+            This course will provide an overview of X-Band radars in a Canadian context.  This includes the basic characteristics of  a 3 cm wavelength radar as well as the strengths and limitations.
           </div>
         </div>
 
@@ -118,11 +118,11 @@
           <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=157" class="header" title="Register for this course now">Radar Renewal: Dual-Polarization Fundamentals</a>
 
           <div class="meta">
-            <strong>Estimated time to complete:</strong> xx-yy minutes
+            <strong>Estimated time to complete:</strong> 15-20 minutes
           </div>
 
           <div class="description">
-            Blah blah blah.
+            This course introduces the concepts associated with Dual Polarization technology.  An overview of the benefits and the basic parameters of Dual Polarized Radars will also be provided.
           </div>
         </div>
 
@@ -144,7 +144,7 @@
           <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=148" class="header" title="Register for this course now">Radar Renewal: Dual-Polarization Basic Radar Products</a>
 
           <div class="meta">
-            <strong>Estimated time to complete:</strong> xx-yy minutes
+            <strong>Estimated time to complete:</strong> 55 minutes - 1.5 hours
           </div>
 
           <div class="description">
@@ -172,11 +172,11 @@
           <div class="header" title="Register for this course now">Radar Renewal: Dual-Polarization Advanced Products</div>
 
           <div class="meta">
-            <strong>Estimated time to complete:</strong> 25-40 minutes
+            <strong>Estimated time to complete:</strong> N/A
           </div>
 
           <div class="description">
-            Blah blah blah.
+            This course will provide an overview of the advanced dual-polarization products such as Particle Classification (PCA) and Quantitative Precipitation Estimation (QPE).
           </div>
         </div>
 

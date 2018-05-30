@@ -48,8 +48,8 @@
           </div>
         </div>
 
-        <div class="ui segment is-muted mt-auto">
-            <strong>Time to complete:</strong> xx-yy minutes
+        <div class="ui segment completion-time mt-auto">
+            <strong>Time to complete:</strong> 1-5 hours
         </div>
       </div>
     </div>
@@ -98,8 +98,8 @@
           </div>
         </div>
 
-        <div class="ui segment is-muted mt-auto">
-          <strong>Time to complete:</strong> xx-yy minutes
+        <div class="ui segment completion-time mt-auto">
+          <strong>Time to complete:</strong> 1-1.5 hours
         </div>
       </div>
     </div>
@@ -148,8 +148,8 @@
           </div>
         </div>
 
-        <div class="ui segment is-muted mt-auto">
-          <strong>Time to complete:</strong> xx-yy minutes
+        <div class="ui segment completion-time mt-auto">
+          <strong>Time to complete:</strong> 2-3 hours
         </div>
       </div>
     </div>
@@ -198,8 +198,8 @@
           </div>
         </div>
 
-        <div class="ui segment is-muted mt-auto">
-          <strong>Time to complete:</strong> xx-yy minutes
+        <div class="ui segment completion-time mt-auto">
+          <strong>Time to complete:</strong> 2-3 hours
         </div>
       </div>
     </div>
