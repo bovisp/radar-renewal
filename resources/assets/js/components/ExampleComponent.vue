@@ -436,7 +436,7 @@
           data.question7 = this.question7Data
         }
 
-        axios.post('/feedback', data)
+        axios.post('/radar-renewal/feedback', data)
         .then(response => {
           this.isSubmitting = false
           this.isSuccess = true
