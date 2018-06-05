@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <a href="feedback/download" download>Download</a>
                 </div>
             </div>
         </div>
