@@ -15,9 +15,9 @@ class CreateQuestion2sTable extends Migration
     {
         Schema::create('question2s', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('comments')->nullable();
             $table->string('course_name')->nullable();
             $table->string('themes')->nullable();
+            $table->text('comments')->nullable();
             $table->timestamps();
         });
     }

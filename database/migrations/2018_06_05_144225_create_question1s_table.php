@@ -15,9 +15,9 @@ class CreateQuestion1sTable extends Migration
     {
         Schema::create('question1s', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('comments')->nullable();
             $table->string('course_name')->nullable();
             $table->string('met_objectives')->nullable();
+            $table->text('comments')->nullable();
             $table->timestamps();
         });
     }
