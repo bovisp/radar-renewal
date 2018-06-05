@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::post('/feedback', 'FeedbackController@store');
 
 Route::get('/feedback/download', 'DownloadFeedbackController@export');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
