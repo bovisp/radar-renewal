@@ -325,7 +325,7 @@
 
         question1Item: {
           name: '',
-          options: [],
+          options: '',
           comments: ''
         },
         question2Item: {
@@ -406,22 +406,41 @@
       submit () {
         this.isSubmitting = true
 
-        let submitData = {
-          question1: this.question1Data,
-          question2: this.question2Data,
-          question3: this.question3Data,
-          question4: this.question4Data,
-          question5: this.question5Data,
-          question6: this.question6Data,
-          question7: this.question7Data
+        let data = {};
+
+        if (this.question1Data.length) {
+          data.question1 = this.question1Data
         }
 
-        console.log(submitData)
+        if (this.question2Data.length) {
+          data.question2 = this.question2Data
+        }
 
-        setTimeout(() => {
+        if (this.question3Data.length) {
+          data.question3 = this.question3Data
+        }
+
+        if (this.question4Data.options.length || this.question4Data.comments.length) {
+          data.question4 = this.question4Data
+        }
+
+        if (this.question5Data.options.length || this.question5Data.comments.length) {
+          data.question5 = this.question5Data
+        }
+
+        if (this.question6Data.length) {
+          data.question6 = this.question6Data
+        }
+
+        if (this.question7Data.length) {
+          data.question7 = this.question7Data
+        }
+
+        axios.post('/feedback', data)
+        .then(response => {
           this.isSubmitting = false
           this.isSuccess = true
-        }, 5000)
+        })
       },
 
       question1Select () {
