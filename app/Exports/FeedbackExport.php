@@ -15,10 +15,10 @@ class FeedbackExport implements WithMultipleSheets
 
     protected $headers = [
     	'Question1' => [
-    		'#', 'Comments', 'Course', 'Met objectives', 'Date created', 'Date updated'
+    		'#', 'Course', 'Met objectives', 'Comments', 'Date created', 'Date updated'
     	],
     	'Question2' => [
-    		'#', 'Comments', 'Course', 'Themes', 'Date created', 'Date updated'
+    		'#', 'Course', 'Themes', 'Comments', 'Date created', 'Date updated'
     	],
     	'Question3' => [
     		'#', 'Suggested topics', 'Date created', 'Date updated'
