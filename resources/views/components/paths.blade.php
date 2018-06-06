@@ -5,7 +5,7 @@
 
   <div class="ui stackable four column grid">
     <div class="column flex items-stretch">
-      <div class="ui segments flex">
+      <div class="ui segments">
         <div class="ui segment p-0 m-0">
           <h3 class="ui icon header pt-4 px-4">
             <i class="graduation cap icon"></i>
@@ -48,14 +48,14 @@
           </div>
         </div>
 
-        <div class="ui segment completion-time mt-auto">
+        <div class="ui segment completion-time">
             <strong>Time to complete:</strong> 1-5 hours
         </div>
       </div>
     </div>
 
     <div class="column flex items-stretch">
-      <div class="ui segments flex">
+      <div class="ui segments">
         <div class="ui segment p-0 m-0">
           <h3 class="ui icon header pt-4 px-4">
             <i class="user secret icon"></i>
@@ -98,14 +98,14 @@
           </div>
         </div>
 
-        <div class="ui segment completion-time mt-auto">
+        <div class="ui segment completion-time">
           <strong>Time to complete:</strong> 1-1.5 hours
         </div>
       </div>
     </div>
 
     <div class="column flex items-stretch">
-      <div class="ui segments flex">
+      <div class="ui segments">
         <div class="ui segment p-0 m-0">
           <h3 class="ui icon header pt-4 px-4 w-full pb-6">
             <i class="cloud icon"></i>
@@ -148,14 +148,14 @@
           </div>
         </div>
 
-        <div class="ui segment completion-time mt-auto">
+        <div class="ui segment completion-time">
           <strong>Time to complete:</strong> 2-3 hours
         </div>
       </div>
     </div>
 
     <div class="column flex items-stretch">
-      <div class="ui segments flex">
+      <div class="ui segments">
         <div class="ui segment p-0 m-0">
           <h3 class="ui icon header pt-4 px-4  pb-6">
             <i class="bolt icon"></i>
@@ -198,7 +198,7 @@
           </div>
         </div>
 
-        <div class="ui segment completion-time mt-auto">
+        <div class="ui segment completion-time">
           <strong>Time to complete:</strong> 2-3 hours
         </div>
       </div>
