@@ -21,7 +21,7 @@
         </div>
 
         <div class="extra content flex items-center">
-          <i class="users icon" style="position: relative; top:-3px;"></i> <span>17 Registered</span>
+          {{-- <i class="users icon" style="position: relative; top:-3px;"></i> <span>17 Registered</span> --}}
 
           <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=147" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
         </div>
@@ -47,7 +47,7 @@
         </div>
 
         <div class="extra content flex items-center">
-          <i class="users icon" style="position: relative; top:-3px;"></i> <span>34 Registered</span>
+          {{-- <i class="users icon" style="position: relative; top:-3px;"></i> <span>34 Registered</span> --}}
 
           <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=154" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
         </div>
@@ -73,7 +73,7 @@
         </div>
 
         <div class="extra content flex items-center">
-          <i class="users icon" style="position: relative; top:-3px;"></i> <span>12 Registered</span>
+          {{-- <i class="users icon" style="position: relative; top:-3px;"></i> <span>12 Registered</span> --}}
 
           <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=145" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
         </div>
@@ -101,7 +101,7 @@
         </div>
 
         <div class="extra content flex items-center">
-          <i class="users icon" style="position: relative; top:-3px;"></i> <span>29 Registered</span>
+          {{-- <i class="users icon" style="position: relative; top:-3px;"></i> <span>29 Registered</span> --}}
 
           <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=144" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
         </div>
@@ -127,7 +127,7 @@
         </div>
 
         <div class="extra content flex items-center">
-          <i class="users icon" style="position: relative; top:-3px;"></i> <span>30 Registered</span>
+          {{-- <i class="users icon" style="position: relative; top:-3px;"></i> <span>30 Registered</span> --}}
 
           <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=157" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
         </div>
@@ -153,7 +153,7 @@
         </div>
 
         <div class="extra content flex items-center">
-          <i class="users icon" style="position: relative; top:-3px;"></i> <span>15 Registered</span>
+          {{-- <i class="users icon" style="position: relative; top:-3px;"></i> <span>15 Registered</span> --}}
 
           <a href="http://wto-science-moodle.to.on.ec.gc.ca/moodle/course/view.php?id=148" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
         </div>
@@ -181,7 +181,7 @@
         </div>
 
         <div class="extra content flex items-center">
-          <i class="users icon" style="position: relative; top:-3px;"></i> <span>23 Registered</span>
+          {{-- <i class="users icon" style="position: relative; top:-3px;"></i> <span>23 Registered</span> --}}
 
           <a href="#" class="blue basic ui button small ml-auto disabled" title="Register now">Coming soon</a>
         </div>

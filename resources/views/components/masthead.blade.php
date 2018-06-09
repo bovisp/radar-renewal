@@ -1,4 +1,4 @@
-<header class="ui basic masthead segment" style="background-image: url('images/banner.jpg') !important;">
+<header class="ui basic masthead segment m-0" style="background-image: url('images/banner.jpg') !important;">
   <div class="ui container">
     <h1 class="mb-8">New radars are in range</h1>
 

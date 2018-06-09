@@ -17,7 +17,6 @@
 
         <title>Radar Renewal</title>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
 
         <link rel="stylesheet" href="css/app.css">
