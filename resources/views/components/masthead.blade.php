@@ -5,6 +5,8 @@
     <div class="is-centered">
       <a data-scroll href="#courses" class="huge blue ui button mr-8">View courses</a>
 
+      <a data-scroll href="#paths" class="huge blue basic ui button mr-8">Suggested paths</a>
+
       <a data-scroll href="#feedback" class="huge blue basic ui button">Give feedback</a>
     </div>
   </div>

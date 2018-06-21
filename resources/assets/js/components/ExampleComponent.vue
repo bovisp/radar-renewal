@@ -242,7 +242,7 @@
           </div>
 
           <div class="field">
-            <label>Feel free expand more fully on your choice...</label>
+            <label>Feel free to expand more fully on your choice or provide a recommendation on how to change the course list under your chosen path?</label>
 
             <textarea v-model="question5Data.comments"></textarea>
           </div>

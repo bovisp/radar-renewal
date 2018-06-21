@@ -1,4 +1,4 @@
-<section class="ui container pt-16">
+<section class="ui container pt-16" id="paths">
   <h2 class="flow-header is-centered pb-16">Recommended Learning Paths</h2>
 
   <p class="flow-text is-light pb-16">In the listing below we are offering a few recommended learning paths that roughly correspond to different target audiences within MSC.  These learning paths offer you a sequence of courses  that allow you to master a topic to the level you need in small steps.  The learning paths listed below are intended only a s a guide,  this gives you a starting point and still offers you the freedom to tailor your learning to your individual learning needs or interests. </p>
@@ -49,7 +49,7 @@
         </div>
 
         <div class="ui segment completion-time">
-            <strong>Time to complete:</strong> 1-5 hours
+            <strong>Time to complete:</strong> 1.5-5 hours
         </div>
       </div>
     </div>
@@ -99,7 +99,7 @@
         </div>
 
         <div class="ui segment completion-time">
-          <strong>Time to complete:</strong> 1-1.5 hours
+          <strong>Time to complete:</strong> 1.5-2 hours
         </div>
       </div>
     </div>
@@ -149,7 +149,7 @@
         </div>
 
         <div class="ui segment completion-time">
-          <strong>Time to complete:</strong> 2-3 hours
+          <strong>Time to complete:</strong> 3-4 hours
         </div>
       </div>
     </div>
@@ -199,7 +199,7 @@
         </div>
 
         <div class="ui segment completion-time">
-          <strong>Time to complete:</strong> 2-3 hours
+          <strong>Time to complete:</strong> 3-4 hours
         </div>
       </div>
     </div>
