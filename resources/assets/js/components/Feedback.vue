@@ -4,7 +4,9 @@
 
     <div class="submitting" v-if="isSubmitting && !isSuccess">
       <div class="ui padded segment">
-        <h4 class="ui header">Submitting your feedback</h4>
+        <h4 class="ui header">
+          Submitting your feedback
+        </h4>
 
         <div class="loader"></div>
       </div>
@@ -12,7 +14,9 @@
 
     <div class="success" v-if="isSuccess">
       <div class="ui padded segment">
-        <h4 class="ui header">Success! Thanks for your feedback</h4>
+        <h4 class="ui header">
+          Success! Thanks for your feedback
+        </h4>
 
         <i class="huge green check icon"></i>
       </div>
@@ -25,10 +29,18 @@
 
         <!-- Begin question #1 -->
 
-        <tab name="Course objectives" :selected="true" title="tab1">
-          <p>The following questions will evaluate how effectively the course met the learning objectives.</p>
+        <tab 
+          :name="$t('tabs.objectives.title')" 
+          :selected="true" 
+          title="tab1"
+        >
+          <p>
+            {{ $t('tabs.objectives.description') }}
+          </p>
 
-          <h4 class="ui dividing header">1.	How well did each course meet the stated objectives?</h4>
+          <h4 class="ui dividing header">
+            1.	{{ $t('questions.q1.text') }}
+          </h4>
 
           <div class="field">
             <multiselect
@@ -39,19 +51,28 @@
               :searchable="false"
               :close-on-select="true"
               :show-labels="false"
-              placeholder="Choose a course..."
+              :placeholder="$t('questions.q1.dropdown.option0')"
             ></multiselect>
           </div>
 
           <template v-if="question1ItemActive">
-            <h5 class="ui header">Did the "{{ question1Item.name }}" course successfully meet the learning objectives?</h5>
+            <h5 class="ui header">
+              {{ $t('questions.q1.additional.question.part1') }} "{{ question1Item.name }}" {{ $t('questions.q1.additional.question.part2') }}
+            </h5>
 
             <div class="inline fields">
-              <p>Please select one:</p>
+              <p>
+                {{ $t('questions.q1.additional.radio.text') }}
+              </p>
 
               <div class="field" v-for="option in question1Options.radio">
                 <div class="ui radio checkbox">
-                  <input type="radio" v-model="question1Item.options" :value="option" :id="option">
+                  <input 
+                    type="radio" 
+                    v-model="question1Item.options" 
+                    :value="option" 
+                    :id="option"
+                  >
 
                   <label :for="option">{{ option }}</label>
                 </div>
@@ -60,30 +81,44 @@
             </div>
 
             <div class="field">
-              <label>Comments</label>
+              <label>{{ $t('questions.q1.additional.comments') }}</label>
 
               <textarea v-model="question1Item.comments"></textarea>
             </div>
 
             <div class="field">
-              <button type="button" class="ui mini positive button" @click.prevent="addQuestion1Data">Submit additional feedback</button>
-              <button type="button" class="ui mini basic button" @click.prevent="clearQuestion1Data">Cancel</button>
+              <button 
+                type="button" 
+                class="ui mini positive button" 
+                @click.prevent="addQuestion1Data"
+              >{{ $t('questions.q1.additional.buttons.submit') }}</button>
+
+              <button 
+                type="button" 
+                class="ui mini basic button"
+                @click.prevent="clearQuestion1Data"
+              >{{ $t('questions.q1.additional.buttons.cancel') }}</button>
             </div>
           </template>
 
           <div class="ui positive message" v-if="question1Thanks">
             <i class="close icon" @click="question1Thanks=false"></i>
             <div class="header">
-              Thank you!
+              {{ $t('questions.q1.additional.message.header') }}
             </div>
-            <p>If you would like to submit feedback on another course, please choose one from the dropdown menu above.</p>
+
+            <p>
+              {{ $t('questions.q1.additional.message.text') }}
+            </p>
           </div>
 
           <!-- End question #1 -->
 
           <!-- Begin question #2 -->
 
-          <h4 class="ui dividing header">2.	Do you have any suggestions that could help improve a specific module?</h4>
+          <h4 class="ui dividing header">
+            2.	{{ $t('questions.q2.text') }}
+          </h4>
 
           <div class="field">
             <multiselect
@@ -94,19 +129,28 @@
               :searchable="false"
               :close-on-select="true"
               :show-labels="false"
-              placeholder="Choose a course..."
+              :placeholder="$t('questions.q2.dropdown.option0')"
             ></multiselect>
           </div>
 
           <template v-if="question2ItemActive">
-            <h5 class="ui header">Additional Feedback for {{ question2Item.name }}</h5>
+            <h5 class="ui header">
+              {{ $t('questions.q2.additional.label') }} {{ question2Item.name }}
+            </h5>
 
             <div class="inline fields">
-              <p>Select one or more of the following themes:</p>
+              <p>
+                {{ $t('questions.q2.additional.checkbox.text') }}
+              </p>
 
               <div class="field" v-for="option in question2Options.checkbox">
                 <div class="ui checkbox">
-                  <input type="checkbox" v-model="question2Item.options" :value="option" :id="option">
+                  <input 
+                    type="checkbox" 
+                    v-model="question2Item.options" 
+                    :value="option" 
+                    :id="option"
+                  >
 
                   <label :for="option">{{ option }}</label>
                 </div>
@@ -114,14 +158,21 @@
             </div>
 
             <div class="field">
-              <label>Feel free to comment on the themes you chose...</label>
+              <label>{{ $t('questions.q2.additional.comments') }}</label>
 
               <textarea v-model="question2Item.comments"></textarea>
             </div>
 
             <div class="field">
-              <button type="button" class="ui mini positive button" @click.prevent="addQuestion2Data">Submit additional feedback</button>
-              <button type="button" class="ui mini basic button" @click.prevent="clearQuestion2Data">Cancel</button>
+              <button 
+                class="ui mini positive button" 
+                @click.prevent="addQuestion2Data"
+              >{{ $t('questions.q2.additional.buttons.submit') }}</button>
+
+              <button 
+                class="ui mini basic button" 
+                @click.prevent="clearQuestion2Data"
+              >{{ $t('questions.q2.additional.buttons.cancel') }}</button>
             </div>
           </template>
 
@@ -130,10 +181,12 @@
               <i class="close icon" @click="question2Thanks=false"></i>
 
               <div class="header">
-                Thank you!
+                {{ $t('questions.q2.additional.message.header') }}
               </div>
 
-              <p>If you would like to submit feedback on another course, please choose one from the dropdown menu above.</p>
+              <p>
+                {{ $t('questions.q2.additional.message.text') }}
+              </p>
             </div>
           </div>
 
@@ -152,22 +205,32 @@
 
         <!-- Begin Tab: Course content -->
 
-        <tab name="Course content" title="tab2">
+        <tab :name="$t('tabs.content.title')" title="tab2">
           <div class="field">
-            <p>The following questions will evaluate the relevance of the material.</p>
+            <p>{{ $t('tabs.content.description') }}</p>
           </div>
 
           <!-- Begin question #3 -->
 
-          <h4 class="ui dividing header">3. Is there a topic that should be added to this course series?</h4>
+          <h4 class="ui dividing header">
+            3. {{ $t('questions.q3.text') }}
+          </h4>
 
           <div class="field" v-if="!question3Thanks">
-            <input type="text" placeholder="Type a topic description..." v-model="question3Model">
+            <input 
+              type="text" 
+              :placeholder="$t('questions.q3.placeholder')" 
+              v-model="question3Model"
+            >
           </div>
 
           <template v-if="question3Model.length > 0">
             <div class="field">
-              <button type="button" class="ui mini positive button" @click.prevent="addQuestion3Data">Add topic</button>
+              <button 
+                type="button" 
+                class="ui mini positive button" 
+                @click.prevent="addQuestion3Data"
+              >{{ $t('questions.q3.button') }}</button>
             </div>
           </template>
 
@@ -176,10 +239,18 @@
               <i class="close icon" @click="question3Thanks=false"></i>
 
               <div class="header">
-                Thank you!
+                {{ $t('questions.q3.additional.message.header') }}
               </div>
 
-              <p>Would you like to suggest an additional topic? <button class="ui mini positive button" @click.prevent="question3Thanks=false">Yes</button></p>
+              <p>
+                {{ $t('questions.q3.additional.message.text') }} 
+
+                <button 
+                  class="ui mini green label" 
+                  style="margin-left: 1rem"
+                  @click.prevent="question3Thanks=false"
+                >{{ $t('questions.q3.additional.message.button') }}</button>
+              </p>
             </div>
           </div>
 
@@ -187,29 +258,44 @@
 
           <!-- Begin question #4 -->
 
-          <h4 class="ui dividing header">4. Was there a topic(s) that should be dealt with in more depth?</h4>
+          <h4 class="ui dividing header">
+            4. {{ $t('questions.q4.text') }}
+          </h4>
 
           <div class="field" v-for="option in question4Options">
             <div class="ui checkbox">
-              <input type="checkbox" v-model="question4Data.options" :value="option">
+              <input 
+                type="checkbox" 
+                v-model="question4Data.options" 
+                :value="option"
+              >
+
               <label>{{ option }}</label>
             </div>
           </div>
 
           <div class="field">
-            <label>Feel free to comment on any of your course choices...</label>
+            <label>{{ $t('questions.q4.comments') }}</label>
 
             <textarea v-model="question4Data.comments"></textarea>
           </div>
 
           <div class="clearfix field">
-            <button class="ui left floated primary button" @click.prevent="change('tab1')">
+            <button 
+              class="ui left floated primary button" 
+              @click.prevent="change('tab1')"
+            >
               <i class="left chevron icon"></i>
+
               Previous
             </button>
 
-            <button class="ui right floated primary button" @click.prevent="change('tab3')">
+            <button 
+              class="ui right floated primary button" 
+              @click.prevent="change('tab3')"
+            >
               Next
+
               <i class="right chevron icon"></i>
             </button>
           </div>
@@ -222,19 +308,26 @@
 
         <!-- Begin Tab: Course structure -->
 
-        <tab name="Course structure" title="tab3">
+        <tab :name="$t('tabs.structure.title')" title="tab3">
           <div class="field">
-            <p>The following questions will evaluate the structure and organization of the course.</p>
+            <p>{{ $t('tabs.structure.description') }}</p>
           </div>
 
           <!-- Begin question #5 -->
 
-          <h4 class="ui dividing header">5. Did you find the recommended paths helpful?</h4>
+          <h4 class="ui dividing header">
+            5. {{ $t('questions.q5.text') }}
+          </h4>
 
           <div class="inline fields">
             <div class="field" v-for="option in question5Options">
               <div class="ui radio checkbox">
-                <input type="radio" v-model="question5Data.options" :value="option" :id="option">
+                <input 
+                  type="radio" 
+                  v-model="question5Data.options" 
+                  :value="option" 
+                  :id="option"
+                >
 
                 <label :for="option">{{ option }}</label>
               </div>
@@ -242,7 +335,7 @@
           </div>
 
           <div class="field">
-            <label>Feel free to expand more fully on your choice or provide a recommendation on how to change the course list under your chosen path?</label>
+            <label>{{ $t('questions.q5.comments') }}</label>
 
             <textarea v-model="question5Data.comments"></textarea>
           </div>
@@ -251,12 +344,19 @@
 
           <!-- Begin question #6 -->
 
-          <h4 class="ui dividing header">6. How did you find the overall length of the training material?</h4>
+          <h4 class="ui dividing header">
+            6. {{ $t('questions.q6.text') }}
+          </h4>
 
           <div class="inline fields">
             <div class="field" v-for="option in question6Options">
               <div class="ui radio checkbox">
-                <input type="radio" v-model="question6Data" :value="option" :id="option">
+                <input 
+                  type="radio" 
+                  v-model="question6Data" 
+                  :value="option" 
+                  :id="option"
+                >
 
                 <label :for="option">{{ option }}</label>
               </div>
@@ -267,15 +367,21 @@
 
           <!-- Begin question #7 -->
 
-          <h4 class="ui dividing header">7. Do you have any suggestions that could help improve the radar renewal course series?</h4>
+          <h4 class="ui dividing header">
+            7. {{ $t('questions.q7.text') }}
+          </h4>
 
           <div class="field">
             <textarea v-model="question7Data"></textarea>
           </div>
 
           <div class="clearfix field">
-            <button class="ui left floated primary button" @click.prevent="change('tab2')">
+            <button 
+              class="ui left floated primary button" 
+              @click.prevent="change('tab2')"
+            >
               <i class="left chevron icon"></i>
+
               Previous
             </button>
           </div>
@@ -288,7 +394,10 @@
 
       </tabs>
 
-      <button class="big fluid positive bottom attached ui button" @click.prevent="submit">Submit feedback</button>
+      <button 
+        class="big fluid positive bottom attached ui button" 
+        @click.prevent="submit"
+      >{{ $t('tabs.submit') }}</button>
     </form>
   </div>
 </template>
@@ -299,6 +408,8 @@
   import Multiselect from 'vue-multiselect'
 
   export default {
+    props: ['locale'],
+
     components: {
       Tab, Tabs, Multiselect
     },
@@ -346,54 +457,54 @@
 
         question1Options: {
           select: [
-            'Radar Refresher',
-            'S-Band',
-            'X-Band',
-            'S/C/X-Band Comparison',
-            'Dual-Polarization Fundamentals',
-            'Dual Polarization: Basic Radar Products',
-            'Dual Polarization: Advanced Radar Products'
+            this.$t('questions.q1.dropdown.option1'),
+            this.$t('questions.q1.dropdown.option2'),
+            this.$t('questions.q1.dropdown.option3'),
+            this.$t('questions.q1.dropdown.option4'),
+            this.$t('questions.q1.dropdown.option5'),
+            this.$t('questions.q1.dropdown.option6'),
+            this.$t('questions.q1.dropdown.option7'),
           ],
           radio: [
-            'Yes',
-            'No',
-            'Partially'
+            this.$t('questions.q1.additional.radio.option1'),
+            this.$t('questions.q1.additional.radio.option2'),
+            this.$t('questions.q1.additional.radio.option3')
           ]
         },
         question2Options: {
           select: [
-            'Radar Refresher',
-            'S-Band',
-            'X-Band',
-            'S/C/X-Band Comparison',
-            'Dual-Polarization Fundamentals',
-            'Dual Polarization: Basic Radar Products',
-            'Dual Polarization: Advanced Radar Products'
+            this.$t('questions.q2.dropdown.option1'),
+            this.$t('questions.q2.dropdown.option2'),
+            this.$t('questions.q2.dropdown.option3'),
+            this.$t('questions.q2.dropdown.option4'),
+            this.$t('questions.q2.dropdown.option5'),
+            this.$t('questions.q2.dropdown.option6'),
+            this.$t('questions.q2.dropdown.option7')
           ],
           checkbox: [
-            'Audio',
-            'Content',
-            'Format',
-            'Time to complete'
+            this.$t('questions.q2.additional.checkbox.option1'),
+            this.$t('questions.q2.additional.checkbox.option2'),
+            this.$t('questions.q2.additional.checkbox.option3'),
+            this.$t('questions.q2.additional.checkbox.option4')
           ]
         },
         question4Options: [
-          'Radar Refresher',
-          'S-Band',
-          'X-Band',
-          'S/C/X-Band Comparison',
-          'Dual-Polarization Fundamentals',
-          'Dual Polarization: Basic Radar Products',
-          'Dual Polarization: Advanced Radar Products'
+          this.$t('questions.q4.checkbox.option1'),
+          this.$t('questions.q4.checkbox.option2'),
+          this.$t('questions.q4.checkbox.option3'),
+          this.$t('questions.q4.checkbox.option4'),
+          this.$t('questions.q4.checkbox.option5'),
+          this.$t('questions.q4.checkbox.option6'),
+          this.$t('questions.q4.checkbox.option7')
         ],
         question5Options: [
-          'Yes',
-          'No',
+          this.$t('questions.q5.radio.option1'),
+          this.$t('questions.q5.radio.option2')
         ],
         question6Options: [
-          'Too little',
-          'Too much',
-          'Just right'
+          this.$t('questions.q6.radio.option1'),
+          this.$t('questions.q6.radio.option2'),
+          this.$t('questions.q6.radio.option3')
         ]
       }
     },
@@ -444,9 +555,11 @@
       },
 
       question1Select () {
-        this.question1Item['name'] = this.question1Model
+        if (this.question1Model) {
+          this.question1Item['name'] = this.question1Model
 
-        this.question1ItemActive = true
+          this.question1ItemActive = true
+        }
       },
 
       addQuestion1Data () {
@@ -474,9 +587,11 @@
       },
 
       question2Select () {
-        this.question2Item['name'] = this.question2Model
+        if (this.question2Model) {
+          this.question2Item['name'] = this.question2Model
 
-        this.question2ItemActive = true
+          this.question2ItemActive = true
+        }
       },
 
       addQuestion2Data () {
@@ -510,6 +625,10 @@
 
         this.question3Model = ''
       }
+    },
+
+    mounted () {
+      this.$i18n.locale = this.locale
     }
   }
 </script>

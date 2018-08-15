@@ -168,6 +168,7 @@ return [
          * Package Service Providers...
          */
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        ied3vil\LanguageSwitcher\Providers\LanguageSwitcherProvider::class,
 
         /*
          * Application Service Providers...
@@ -231,6 +232,7 @@ return [
          * Package aliases
          */
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'LanguageSwitcher' => ied3vil\LanguageSwitcher\Facades\LanguageSwitcher::class,
     ],
 
 ];

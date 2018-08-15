@@ -22,15 +22,36 @@
         <link rel="stylesheet" href="css/app.css">
     </head>
     <body>
+        <div class="ui basic segment" style="margin-bottom: 0;">
+            <div class="ui horizonal list">
+                <div class="item" style="display: {{ app()->getLocale() === 'en' ? 'none' : 'block' }};">
+                    <div class="right floated content">
+                        <a href="{{ url('lang/en') }}">
+                            <i class="gb flag"></i> English
+                        </a>
+                    </div>
+                </div>
+
+                <div class="item" style="display: {{ app()->getLocale() === 'fr' ? 'none' : 'block' }};">
+                    <div class="right floated content">
+                        <a href="{{ url('lang/fr') }}">
+                            <i class="france flag"></i> Françias
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         @yield('content')
 
       <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14/dist/smooth-scroll.polyfills.min.js"></script>
+
       <script>
         var scroll = new SmoothScroll('a[href*="#"]', {
           speed: 700,
         });
       </script>
+      
       <script src="js/app.js"></script>
     </body>
 </html>

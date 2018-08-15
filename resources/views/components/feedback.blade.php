@@ -6,6 +6,6 @@
   <p class="flow-text pb-16">Please note that this survey is anonymous</p>
 
   <div id="app">
-    <example-component></example-component>
+    <feedback locale="{{ app()->getLocale() }}"></feedback>
   </div>
 </section>
