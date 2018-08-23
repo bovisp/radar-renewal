@@ -35,7 +35,7 @@
                 <div class="item" style="display: {{ app()->getLocale() === 'fr' ? 'none' : 'block' }};">
                     <div class="right floated content">
                         <a href="{{ url('lang/fr') }}">
-                            <i class="france flag"></i> Françias
+                            <i class="france flag"></i> Français
                         </a>
                     </div>
                 </div>
