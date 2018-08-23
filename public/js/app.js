@@ -7693,6 +7693,16 @@ VueI18n.version = '8.0.0';
         submit: 'Submit feedback'
     },
 
+    buttons: {
+        next: 'Next',
+        previous: 'Previous'
+    },
+
+    messages: {
+        submitting: 'Submitting your feedback',
+        submitted: 'Success! Thanks for your feedback'
+    },
+
     questions: {
         q1: {
             text: 'How well did each course meet the stated objectives?',
@@ -7713,9 +7723,9 @@ VueI18n.version = '8.0.0';
                 },
                 radio: {
                     text: 'Please select one:',
-                    option1: 'Yes',
-                    option2: 'No',
-                    option3: 'Partially'
+                    option1: 'Yes / Oui',
+                    option2: 'No / Non',
+                    option3: 'Partially / Partiellement'
                 },
                 comments: 'Comments',
                 buttons: {
@@ -7731,7 +7741,7 @@ VueI18n.version = '8.0.0';
         q2: {
             text: 'Do you have any suggestions that could help improve a specific module?',
             dropdown: {
-                option0: 'Choisissez un cours...',
+                option0: 'Choose a course...',
                 option1: 'Radar Refresher / Une révision des principes radar',
                 option2: 'S-Band / Le radar en bande S',
                 option3: 'X-Band / Le radar en bande X',
@@ -7741,13 +7751,13 @@ VueI18n.version = '8.0.0';
                 option7: 'Dual Polarization: Advanced Radar Products / Les produits très poussés issus de la double polarisation'
             },
             additional: {
-                label: 'Additional feedback for',
+                label: 'Rétroaction additionnelle pour',
                 checkbox: {
-                    text: 'Select one or more of the following themes:',
+                    text: 'Choisir un ou plusieurs des champs suivantes :',
                     option1: 'Audio',
-                    option2: 'Content',
+                    option2: 'Content / Contenu',
                     option3: 'Format',
-                    option4: 'Time to complete'
+                    option4: 'Time to complete / Durée'
                 },
                 comments: 'Feel free to comment on the themes you chose...',
                 buttons: {
@@ -7829,6 +7839,16 @@ VueI18n.version = '8.0.0';
         submit: 'Soumettre'
     },
 
+    buttons: {
+        next: 'suivant',
+        previous: 'précédent'
+    },
+
+    messages: {
+        submitting: 'Soumission de votre rétroaction',
+        submitted: 'Réussi! Merci pour vos commentaires'
+    },
+
     questions: {
         q1: {
             text: 'Dans quelle mesure chaque cours a-t-il atteint les objectifs énoncés?',
@@ -7844,23 +7864,23 @@ VueI18n.version = '8.0.0';
             },
             additional: {
                 question: {
-                    part1: 'Did the',
-                    part2: 'course successfully meet the learning objectives?'
+                    part1: 'Le cours',
+                    part2: 'a-t-il atteint les objectifs d\'apprentissage?'
                 },
                 radio: {
-                    text: 'Please select one:',
-                    option1: 'Yes',
-                    option2: 'No',
-                    option3: 'Partially'
+                    text: 'S’il vous plait, choisir une réponse :',
+                    option1: 'Yes / Oui',
+                    option2: 'No / Non',
+                    option3: 'Partially / Partiellement'
                 },
-                comments: 'Comments',
+                comments: 'Commentaires',
                 buttons: {
-                    submit: 'Submit additional feedback',
-                    cancel: 'Cancel'
+                    submit: 'Soumettre une rétroaction additionnelle',
+                    cancel: 'Annuler'
                 },
                 message: {
-                    header: 'Thank you!',
-                    text: 'If you would like to submit feedback on another course, please choose one from the dropdown menu above.'
+                    header: 'Merci!',
+                    text: 'Si vous désirez nous faire parvenir une rétroaction pour un autre cours, S.V.P. le sélectionner dans le menu déroulant ci-dessus.'
                 }
             }
         },
@@ -7881,30 +7901,30 @@ VueI18n.version = '8.0.0';
                 checkbox: {
                     text: 'Select one or more of the following themes:',
                     option1: 'Audio',
-                    option2: 'Content',
+                    option2: 'Content / Contenu',
                     option3: 'Format',
-                    option4: 'Time to complete'
+                    option4: 'Time to complete / Durée'
                 },
-                comments: 'Feel free to comment on the themes you chose...',
+                comments: 'N\'h\xE9sitez pas \xE0 commenter les champs que vous avez choisis...',
                 buttons: {
-                    submit: 'Submit additional feedback',
-                    cancel: 'Cancel'
+                    submit: 'Soumettre une rétroaction additionnelle',
+                    cancel: 'Annuler'
                 },
                 message: {
-                    header: 'Thank you!',
-                    text: 'If you would like to submit feedback on another course, please choose one from the dropdown menu above.'
+                    header: 'Merci!',
+                    text: 'Si vous désirez nous faire parvenir une rétroaction pour un autre cours, S.V.P. le sélectionner dans le menu déroulant ci-dessus.'
                 }
             }
         },
         q3: {
             text: 'Le cas échéant, quel sujet devrait être ajouté à cette série de cours?',
-            placeholder: 'Type a topic description',
-            button: 'Add topic',
+            placeholder: 'Taper une description de sujet',
+            button: 'Ajouter un sujet',
             additional: {
                 message: {
-                    header: 'Thank you!',
-                    text: 'Would you like to suggest an additional topic? ',
-                    button: 'Yes'
+                    header: 'Merci',
+                    text: 'Aimeriez-vous proposer un autre sujet',
+                    button: 'Oui'
                 }
             }
         },
@@ -7919,7 +7939,7 @@ VueI18n.version = '8.0.0';
                 option6: 'Dual Polarization: Basic Radar Products / Les produits de base issus de la double polarisation',
                 option7: 'Dual Polarization: Advanced Radar Products / Les produits très poussés issus de la double polarisation'
             },
-            comments: 'Feel free to comment on any of your course choices...'
+            comments: 'N\'h\xE9sitez pas \xE0 commenter chacun de vos choix de cours...'
         },
         q5: {
             text: 'Jugez-vous utiles les parcours d’apprentissage proposés?',
@@ -20649,11 +20669,33 @@ var render = function() {
       : _vm._e(),
     _vm._v(" "),
     _vm.isSubmitting && !_vm.isSuccess
-      ? _c("div", { staticClass: "submitting" }, [_vm._m(0)])
+      ? _c("div", { staticClass: "submitting" }, [
+          _c("div", { staticClass: "ui padded segment" }, [
+            _c("h4", { staticClass: "ui header" }, [
+              _vm._v(
+                "\n        " +
+                  _vm._s(_vm.$t("messages.submitting")) +
+                  "\n      "
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "loader" })
+          ])
+        ])
       : _vm._e(),
     _vm._v(" "),
     _vm.isSuccess
-      ? _c("div", { staticClass: "success" }, [_vm._m(1)])
+      ? _c("div", { staticClass: "success" }, [
+          _c("div", { staticClass: "ui padded segment" }, [
+            _c("h4", { staticClass: "ui header" }, [
+              _vm._v(
+                "\n        " + _vm._s(_vm.$t("messages.submitted")) + "\n      "
+              )
+            ]),
+            _vm._v(" "),
+            _c("i", { staticClass: "huge green check icon" })
+          ])
+        ])
       : _vm._e(),
     _vm._v(" "),
     _c(
@@ -21165,7 +21207,11 @@ var render = function() {
                       }
                     },
                     [
-                      _vm._v("\n            Next\n            "),
+                      _vm._v(
+                        "\n            " +
+                          _vm._s(_vm.$t("buttons.next")) +
+                          "\n            "
+                      ),
                       _c("i", { staticClass: "right chevron icon" })
                     ]
                   )
@@ -21402,7 +21448,11 @@ var render = function() {
                     },
                     [
                       _c("i", { staticClass: "left chevron icon" }),
-                      _vm._v("\n\n            Previous\n          ")
+                      _vm._v(
+                        "\n\n            " +
+                          _vm._s(_vm.$t("buttons.previous")) +
+                          "\n          "
+                      )
                     ]
                   ),
                   _vm._v(" "),
@@ -21418,7 +21468,11 @@ var render = function() {
                       }
                     },
                     [
-                      _vm._v("\n            Next\n\n            "),
+                      _vm._v(
+                        "\n            " +
+                          _vm._s(_vm.$t("buttons.next")) +
+                          "\n\n            "
+                      ),
                       _c("i", { staticClass: "right chevron icon" })
                     ]
                   )
@@ -21599,7 +21653,11 @@ var render = function() {
                     },
                     [
                       _c("i", { staticClass: "left chevron icon" }),
-                      _vm._v("\n\n            Previous\n          ")
+                      _vm._v(
+                        "\n\n            " +
+                          _vm._s(_vm.$t("buttons.previous")) +
+                          "\n          "
+                      )
                     ]
                   )
                 ])
@@ -21627,32 +21685,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "ui padded segment" }, [
-      _c("h4", { staticClass: "ui header" }, [
-        _vm._v("\n        Submitting your feedback\n      ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "loader" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "ui padded segment" }, [
-      _c("h4", { staticClass: "ui header" }, [
-        _vm._v("\n        Success! Thanks for your feedback\n      ")
-      ]),
-      _vm._v(" "),
-      _c("i", { staticClass: "huge green check icon" })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

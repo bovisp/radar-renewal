@@ -15,6 +15,16 @@ export default {
       submit: 'Submit feedback'
     },
 
+    buttons: {
+        next: 'Next',
+        previous: 'Previous'
+    },
+
+    messages: {
+        submitting: 'Submitting your feedback',
+        submitted: 'Success! Thanks for your feedback'
+    },
+
     questions: {
     	q1: {
     		text: 'How well did each course meet the stated objectives?',
@@ -35,9 +45,9 @@ export default {
     			},
     			radio: {
     				text: 'Please select one:',
-    				option1: 'Yes',
-    				option2: 'No',
-    				option3: 'Partially'
+    				option1: 'Yes / Oui',
+                    option2: 'No / Non',
+                    option3: 'Partially / Partiellement'
     			},
     			comments: 'Comments',
     			buttons: {
@@ -53,7 +63,7 @@ export default {
     	q2: {
     		text: 'Do you have any suggestions that could help improve a specific module?',
     		dropdown: {
-    			option0: 'Choisissez un cours...',
+    			option0: 'Choose a course...',
     			option1: 'Radar Refresher / Une révision des principes radar',
     			option2: 'S-Band / Le radar en bande S',
     			option3: 'X-Band / Le radar en bande X',
@@ -63,13 +73,13 @@ export default {
     			option7: 'Dual Polarization: Advanced Radar Products / Les produits très poussés issus de la double polarisation',
     		},
     		additional: {
-    			label: 'Additional feedback for',
+    			label: 'Rétroaction additionnelle pour',
     			checkbox: {
-    				text: 'Select one or more of the following themes:',
+    				text: 'Choisir un ou plusieurs des champs suivantes :',
     				option1: 'Audio',
-    				option2: 'Content',
+    				option2: 'Content / Contenu',
     				option3: 'Format',
-    				option4: 'Time to complete'
+    				option4: 'Time to complete / Durée'
     			},
     			comments: 'Feel free to comment on the themes you chose...',
     			buttons: {

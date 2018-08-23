@@ -1,29 +1,38 @@
 <section class="ui container" id="courses">
-  <h2 class="flow-header is-centered pb-16">Courses</h2>
+  <h2 class="flow-header is-centered pb-16">
+    {{ trans('app.sections.courses.title') }}
+  </h2>
 
   <div class="ui stackable three column grid">
     <div class="column flex items-stretch">
       <div class="ui card">
         <div class="image">
-          <img src="images/radar_refresher.jpg" alt="Radar Renewal: Radar Refresher image">
+          <img src="images/radar_refresher.jpg" alt="{{ trans('app.sections.courses.radar_refresher.title') }}">
         </div>
 
         <div class="content">
-          <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=147" class="header" title="Register for this course now">Radar Renewal: Radar Refresher</a>
+          <a 
+            href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=147" 
+            class="header" 
+          >{{ trans('app.sections.courses.radar_refresher.title') }}</a>
 
           <div class="meta">
-            <strong>Estimated time to complete:</strong> 15 minutes - 4 hours
+            <strong>{{ trans('app.sections.courses.completion_time') }}</strong> {{ trans('app.sections.courses.radar_refresher.completion_range') }}
           </div>
 
           <div class="description">
-            This <strong>optional</strong> course enables forecasters to refresh their knowledge of existing operational weather radars.  A number of resources have been included for radar fundamentals and software knobology.
+            {{ trans('app.sections.courses.radar_refresher.description') }}
           </div>
         </div>
 
         <div class="extra content flex items-center">
           {{-- <i class="users icon" style="position: relative; top:-3px;"></i> <span>17 Registered</span> --}}
 
-          <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=147" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
+          <a 
+            href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=147" 
+            class="blue basic ui button small ml-auto" 
+            title="Register now"
+          >{{ trans('app.sections.courses.register_button') }}</a>
         </div>
       </div>
     </div>
@@ -31,25 +40,32 @@
     <div class="column flex items-stretch">
       <div class="ui card">
         <div class="image">
-          <img src="images/s_band.jpg" alt="Radar Renewal: S-Band image">
+          <img src="images/s_band.jpg" alt="{{ trans('app.sections.courses.s_band.title') }}">
         </div>
 
         <div class="content">
-          <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=154" class="header" title="Register for this course now">Radar Renewal: S-Band</a>
+          <a 
+            href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=154" 
+            class="header" 
+          >{{ trans('app.sections.courses.s_band.title') }}</a>
 
           <div class="meta">
-            <strong>Estimated time to complete:</strong> 25-40 minutes
+            <strong>{{ trans('app.sections.courses.completion_time') }}</strong> {{ trans('app.sections.courses.s_band.completion_range') }}
           </div>
 
           <div class="description">
-            This course discusses the main advantages of a 10 cm wavelength radar as well as the limitations encountered with some of the Selex 1700s characteristics. It concludes by presenting the new radar scanning strategy underlying the many aspects that were taking under consideration.
+            {{ trans('app.sections.courses.s_band.description') }}
           </div>
         </div>
 
         <div class="extra content flex items-center">
           {{-- <i class="users icon" style="position: relative; top:-3px;"></i> <span>34 Registered</span> --}}
 
-          <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=154" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
+          <a 
+            href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=154" 
+            class="blue basic ui button small ml-auto" 
+            title="{{ trans('app.sections.courses.register_button') }}"
+          >{{ trans('app.sections.courses.register_button') }}</a>
         </div>
       </div>
     </div>
@@ -57,25 +73,28 @@
     <div class="column flex items-stretch">
       <div class="ui card">
         <div class="image">
-          <img src="images/x_band.jpg" alt="Radar Renewal: X-Band image">
+          <img src="images/x_band.jpg" alt="{{ trans('app.sections.courses.x_band.title') }}">
         </div>
 
         <div class="content">
-          <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=145" class="header" title="Register for this course now">Radar Renewal: X-Band</a>
+          <a 
+            href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=145" 
+            class="header" 
+          >{{ trans('app.sections.courses.x_band.title') }}</a>
 
           <div class="meta">
-            <strong>Estimated time to complete:</strong> 20-30 minutes
+            <strong>{{ trans('app.sections.courses.completion_time') }}</strong> {{ trans('app.sections.courses.x_band.completion_range') }}
           </div>
 
           <div class="description">
-            This course will provide an overview of X-Band radars in a Canadian context.  This includes the basic characteristics of  a 3 cm wavelength radar as well as the strengths and limitations.
+            {{ trans('app.sections.courses.x_band.description') }}
           </div>
         </div>
 
         <div class="extra content flex items-center">
           {{-- <i class="users icon" style="position: relative; top:-3px;"></i> <span>12 Registered</span> --}}
 
-          <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=145" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
+          <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=145" class="blue basic ui button small ml-auto" title="{{ trans('app.sections.courses.register_button') }}">{{ trans('app.sections.courses.register_button') }}</a>
         </div>
       </div>
     </div>
@@ -85,25 +104,33 @@
     <div class="column flex items-stretch">
       <div class="ui card">
         <div class="image">
-          <img src="images/s_c_x_band_comparison.jpg" alt="Radar Renewal: S/C/X-Band Comparison image">
+          <img src="images/s_c_x_band_comparison.jpg" alt="{{ trans('app.sections.courses.s_c_x_band_comp.title') }}">
         </div>
 
         <div class="content">
-          <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=144" class="header" title="Register for this course now">Radar Renewal: S/C/X-Band Comparison</a>
+          <a 
+            href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=144" 
+            class="header" 
+            title="Register for this course now"
+          >{{ trans('app.sections.courses.s_c_x_band_comp.title') }}</a>
 
           <div class="meta">
-            <strong>Estimated time to complete:</strong> 25-40 minutes
+            <strong>{{ trans('app.sections.courses.completion_time') }}</strong> {{ trans('app.sections.courses.s_c_x_band_comp.completion_range') }}
           </div>
 
           <div class="description">
-            This course will provide an overview of the key differences between the various weather radar systems in operation across Canada as well as highlighting aspects of the new S-Band systems that will be transparent and not-transparent to the end users.
+            {{ trans('app.sections.courses.s_c_x_band_comp.description') }}
           </div>
         </div>
 
         <div class="extra content flex items-center">
           {{-- <i class="users icon" style="position: relative; top:-3px;"></i> <span>29 Registered</span> --}}
 
-          <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=144" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
+          <a 
+            href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=144" 
+            class="blue basic ui button small ml-auto" 
+            title="{{ trans('app.sections.courses.register_button') }}"
+          >{{ trans('app.sections.courses.register_button') }}</a>
         </div>
       </div>
     </div>
@@ -111,25 +138,33 @@
     <div class="column flex items-stretch">
       <div class="ui card">
         <div class="image">
-          <img src="images/dual_polarization_fundamentals.jpg" alt="Radar Renewal: Dual-Polarization Fundamentals image">
+          <img src="images/dual_polarization_fundamentals.jpg" alt="{{ trans('app.sections.courses.dual_pol_fund.title') }}">
         </div>
 
         <div class="content">
-          <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=157" class="header" title="Register for this course now">Radar Renewal: Dual-Polarization Fundamentals</a>
+          <a 
+            href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=157" 
+            class="header" 
+            title="Register for this course now"
+          >{{ trans('app.sections.courses.dual_pol_fund.title') }}</a>
 
           <div class="meta">
-            <strong>Estimated time to complete:</strong> 15-20 minutes
+            <strong>{{ trans('app.sections.courses.completion_time') }}</strong> {{ trans('app.sections.courses.dual_pol_fund.completion_range') }}
           </div>
 
           <div class="description">
-            This course introduces the concepts associated with Dual Polarization technology.  An overview of the benefits and the basic parameters of Dual Polarized Radars will also be provided.
+            {{ trans('app.sections.courses.dual_pol_fund.description') }}
           </div>
         </div>
 
         <div class="extra content flex items-center">
           {{-- <i class="users icon" style="position: relative; top:-3px;"></i> <span>30 Registered</span> --}}
 
-          <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=157" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
+          <a 
+            href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=157" 
+            class="blue basic ui button small ml-auto" 
+            title="{{ trans('app.sections.courses.register_button') }}"
+          >{{ trans('app.sections.courses.register_button') }}</a>
         </div>
       </div>
     </div>
@@ -137,25 +172,33 @@
     <div class="column flex items-stretch">
       <div class="ui card">
         <div class="image">
-          <img src="images/dual_polarization_basic_products.jpg" alt="Radar Renewal: Dual-Polarization Basic Radar Products image">
+          <img src="images/dual_polarization_basic_products.jpg" alt="{{ trans('app.sections.courses.dual_pol_basic_products.title') }}">
         </div>
 
         <div class="content">
-          <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=148" class="header" title="Register for this course now">Radar Renewal: Dual-Polarization Basic Radar Products</a>
+          <a 
+            href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=148" 
+            class="header" 
+            title="Register for this course now"
+          >{{ trans('app.sections.courses.dual_pol_basic_products.title') }}</a>
 
           <div class="meta">
-            <strong>Estimated time to complete:</strong> 55 minutes - 1.5 hours
+            <strong>{{ trans('app.sections.courses.completion_time') }}</strong> {{ trans('app.sections.courses.dual_pol_basic_products.completion_range') }}
           </div>
 
           <div class="description">
-            This course will provide an overview of the basic dual-polarization products such as Differential Reflectivity, Correlation Coefficient, and Differential Phase Shift.
+            {{ trans('app.sections.courses.dual_pol_basic_products.description') }}
           </div>
         </div>
 
         <div class="extra content flex items-center">
           {{-- <i class="users icon" style="position: relative; top:-3px;"></i> <span>15 Registered</span> --}}
 
-          <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=148" class="blue basic ui button small ml-auto" title="Register now">Register now</a>
+          <a 
+            href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=148" 
+            class="blue basic ui button small ml-auto" 
+            title="{{ trans('app.sections.courses.register_button') }}"
+          >{{ trans('app.sections.courses.register_button') }}</a>
         </div>
       </div>
     </div>
@@ -165,25 +208,29 @@
     <div class="column flex items-stretch">
       <div class="ui card">
         <div class="image">
-          <img src="images/dual_polarization_advanced_products.jpg" alt="Radar Renewal: Dual-Polarization Advanced Products image">
+          <img src="images/dual_polarization_advanced_products.jpg" alt="{{ trans('app.sections.courses.dual_pol_advanced_products.title') }}">
         </div>
 
         <div class="content">
-          <div class="header" title="Register for this course now">Radar Renewal: Dual-Polarization Advanced Products</div>
+          <div class="header">{{ trans('app.sections.courses.dual_pol_advanced_products.title') }}</div>
 
           <div class="meta">
-            <strong>Estimated time to complete:</strong> N/A
+            <strong>{{ trans('app.sections.courses.completion_time') }}</strong> {{ trans('app.sections.courses.dual_pol_advanced_products.completion_range') }}
           </div>
 
           <div class="description">
-            This course will provide an overview of the advanced dual-polarization products such as Particle Classification (PCA) and Quantitative Precipitation Estimation (QPE).
+           {{ trans('app.sections.courses.dual_pol_advanced_products.description') }}
           </div>
         </div>
 
         <div class="extra content flex items-center">
           {{-- <i class="users icon" style="position: relative; top:-3px;"></i> <span>23 Registered</span> --}}
 
-          <a href="#" class="blue basic ui button small ml-auto disabled" title="Register now">Coming soon</a>
+          <a 
+            href="#" 
+            class="blue basic ui button small ml-auto disabled" 
+            title="{{ trans('app.sections.courses.soon_button') }}"
+          >{{ trans('app.sections.courses.soon_button') }}</a>
         </div>
       </div>
     </div>

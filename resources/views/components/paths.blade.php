@@ -1,7 +1,7 @@
 <section class="ui container pt-16" id="paths">
-  <h2 class="flow-header is-centered pb-16">Recommended Learning Paths</h2>
+  <h2 class="flow-header is-centered pb-16">{{ trans('app.sections.learning_paths.title') }}</h2>
 
-  <p class="flow-text is-light pb-16">In the listing below we are offering a few recommended learning paths that roughly correspond to different target audiences within MSC.  These learning paths offer you a sequence of courses  that allow you to master a topic to the level you need in small steps.  The learning paths listed below are intended only a s a guide,  this gives you a starting point and still offers you the freedom to tailor your learning to your individual learning needs or interests. </p>
+  <p class="flow-text is-light pb-16">{{ trans('app.sections.learning_paths.description') }}</p>
 
   <div class="ui stackable four column grid">
     <div class="column flex items-stretch">
@@ -11,7 +11,7 @@
             <i class="graduation cap icon"></i>
 
             <div class="content">
-              Research Scientists and Interested Radar Users
+              {{ trans('app.sections.learning_paths.research_scientists.title') }}
             </div>
           </h3>
 
@@ -19,37 +19,50 @@
 
           <div class="ui very relaxed divided list mt-0">
             <div class="item px-4" style="padding-top: 0.85714286em;">
-              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=147">Radar Renewal: Radar Refresher</a>
+              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=147">
+                {{ trans('app.sections.courses.radar_refresher.title') }}
+              </a>
             </div>
 
             <div class="item px-4">
-              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=154">Radar Renewal: S-Band</a>
+              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=154">
+                {{ trans('app.sections.courses.s_band.title') }}
+              </a>
             </div>
 
             <div class="item is-muted px-4">
-              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=145">Renewal: X-Band (Optional)</a>
+              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=145">
+                {{ trans('app.sections.courses.x_band.title') }} (Optional)
+              </a>
             </div>
 
             <div class="item is-muted px-4">
-              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=144">Radar Renewal: S/C/X-Band Comparison (Optional)</a>
+              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=144">
+                {{ trans('app.sections.courses.s_c_x_band_comp.title') }} (Optional)
+              </a>
             </div>
 
             <div class="item px-4">
-              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=157">Radar Renewal: Dual-Polarization Fundamentals</a>
+              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=157">
+                {{ trans('app.sections.courses.dual_pol_fund.title') }}
+              </a>
             </div>
 
             <div class="item is-muted px-4">
-              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=148">Radar Renewal: Dual-Polarization Basic Products Radar (Optional)</a>
+              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=148">
+                {{ trans('app.sections.courses.dual_pol_basic_products.title') }} (Optional)
+              </a>
             </div>
 
             <div class="item is-muted px-4" style="padding-bottom: 0.85714286em;">
-              Radar Renewal: Dual-Polarization Advanced Products (Optional)
+              {{ trans('app.sections.courses.dual_pol_advanced_products.title') }} (Optional)
             </div>
+
           </div>
         </div>
 
         <div class="ui segment completion-time">
-            <strong>Time to complete:</strong> 1.5-5 hours
+            <strong>{{ trans('app.sections.learning_paths.completion_time') }}</strong> 1.5-5 hours
         </div>
       </div>
     </div>
@@ -61,7 +74,7 @@
             <i class="user secret icon"></i>
 
             <div class="content">
-              Warning Preparedness Meteorologists
+              {{ trans('app.sections.learning_paths.wpm.title') }}
             </div>
           </h3>
 
@@ -69,37 +82,49 @@
 
           <div class="ui very relaxed divided list mt-0">
             <div class="item is-muted px-4" style="padding-top: 0.85714286em;">
-              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=147">Radar Renewal: Radar Refresher (Optional)</a>
+              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=147">
+                {{ trans('app.sections.courses.radar_refresher.title') }} (Optional)
+              </a>
             </div>
 
             <div class="item px-4">
-              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=154">Radar Renewal: S-Band</a>
+              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=154">
+                {{ trans('app.sections.courses.s_band.title') }}
+              </a>
             </div>
 
             <div class="item is-muted px-4">
-              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=145">Renewal: X-Band (Optional)</a>
+              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=145">
+                {{ trans('app.sections.courses.x_band.title') }} (Optional)
+              </a>
             </div>
 
             <div class="item px-4">
-              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=144">Radar Renewal: S/C/X-Band Comparison</a>
+              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=144">
+                {{ trans('app.sections.courses.s_c_x_band_comp.title') }}
+              </a>
             </div>
 
             <div class="item px-4">
-              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=157">Radar Renewal: Dual-Polarization Fundamentals</a>
+              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=157">
+                {{ trans('app.sections.courses.dual_pol_fund.title') }}
+              </a>
             </div>
 
             <div class="item is-muted px-4">
-              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=148">Radar Renewal: Dual-Polarization Basic Products Radar (Optional)</a>
+              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=148">
+                {{ trans('app.sections.courses.dual_pol_basic_products.title') }} (Optional)
+              </a>
             </div>
 
             <div class="item is-muted px-4" style="padding-bottom: 0.85714286em;">
-              Radar Renewal: Dual-Polarization Advanced Products (Optional)
+              {{ trans('app.sections.courses.dual_pol_advanced_products.title') }} (Optional)
             </div>
           </div>
         </div>
 
         <div class="ui segment completion-time">
-          <strong>Time to complete:</strong> 1.5-2 hours
+          <strong>{{ trans('app.sections.learning_paths.completion_time') }}</strong> 1.5-2 hours
         </div>
       </div>
     </div>
@@ -111,7 +136,7 @@
             <i class="cloud icon"></i>
 
             <div class="content">
-              Operational Forecasters
+              {{ trans('app.sections.learning_paths.operational_forecasters.title') }}
             </div>
           </h3>
 
@@ -119,37 +144,48 @@
 
           <div class="ui very relaxed divided list mt-0">
             <div class="item is-muted px-4" style="padding-top: 0.85714286em;">
-              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=147">Radar Renewal: Radar Refresher (Optional)</a>
+              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=147">
+                {{ trans('app.sections.courses.radar_refresher.title') }} (Optional)</a>
             </div>
 
             <div class="item px-4">
-              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=154">Radar Renewal: S-Band</a>
+              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=154">
+                {{ trans('app.sections.courses.s_band.title') }}
+              </a>
             </div>
 
             <div class="item is-muted px-4">
-              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=145">Renewal: X-Band (Optional)</a>
+              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=145">
+                {{ trans('app.sections.courses.x_band.title') }} (Optional)
+              </a>
             </div>
 
             <div class="item px-4">
-              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=144">Radar Renewal: S/C/X-Band Comparison</a>
+              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=144">
+                {{ trans('app.sections.courses.s_c_x_band_comp.title') }}
+              </a>
             </div>
 
             <div class="item px-4">
-              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=157">Radar Renewal: Dual-Polarization Fundamentals</a>
+              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=157">
+                {{ trans('app.sections.courses.dual_pol_fund.title') }}
+              </a>
             </div>
 
             <div class="item px-4">
-              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=148">Radar Renewal: Dual-Polarization Basic Products Radar</a>
+              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=148">
+                {{ trans('app.sections.courses.dual_pol_basic_products.title') }}
+              </a>
             </div>
 
             <div class="item is-muted px-4" style="padding-bottom: 0.85714286em;">
-              Radar Renewal: Dual-Polarization Advanced Products (Optional)
+              {{ trans('app.sections.courses.dual_pol_advanced_products.title') }} (Optional)
             </div>
           </div>
         </div>
 
         <div class="ui segment completion-time">
-          <strong>Time to complete:</strong> 3-4 hours
+          <strong>{{ trans('app.sections.learning_paths.completion_time') }}</strong> 3-4 hours
         </div>
       </div>
     </div>
@@ -161,7 +197,7 @@
             <i class="bolt icon"></i>
 
             <div class="content">
-              Severe Weather Forecasters
+              {{ trans('app.sections.learning_paths.severe_forecasters.title') }}
             </div>
           </h3>
 
@@ -169,37 +205,49 @@
 
           <div class="ui very relaxed divided list mt-0">
             <div class="item is-muted px-4" style="padding-top: 0.85714286em;">
-              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=147">Radar Renewal: Radar Refresher (Optional)</a>
+              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=147">
+                {{ trans('app.sections.courses.radar_refresher.title') }} (Optional)
+              </a>
             </div>
 
             <div class="item px-4">
-              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=154">Radar Renewal: S-Band</a>
+              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=154">
+                {{ trans('app.sections.courses.s_band.title') }}
+              </a>
             </div>
 
             <div class="item is-muted px-4">
-              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=145">Renewal: X-Band (Optional)</a>
+              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=145">
+                {{ trans('app.sections.courses.x_band.title') }} (Optional)
+              </a>
             </div>
 
             <div class="item px-4">
-              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=144">Radar Renewal: S/C/X-Band Comparison</a>
+              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=144">
+                {{ trans('app.sections.courses.s_c_x_band_comp.title') }}
+              </a>
             </div>
 
             <div class="item px-4">
-              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=157">Radar Renewal: Dual-Polarization Fundamentals</a>
+              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=157">
+                {{ trans('app.sections.courses.dual_pol_fund.title') }}
+              </a>
             </div>
 
             <div class="item px-4">
-              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=148">Radar Renewal: Dual-Polarization Basic Products Radar</a>
+              <a href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=148">
+                {{ trans('app.sections.courses.dual_pol_basic_products.title') }}
+              </a>
             </div>
 
             <div class="item px-4" style="padding-bottom: 0.85714286em;">
-              Radar Renewal: Dual-Polarization Advanced Products
+              {{ trans('app.sections.courses.dual_pol_advanced_products.title') }}
             </div>
           </div>
         </div>
 
         <div class="ui segment completion-time">
-          <strong>Time to complete:</strong> 3-4 hours
+          <strong>{{ trans('app.sections.learning_paths.completion_time') }}</strong> 3-4 hours
         </div>
       </div>
     </div>

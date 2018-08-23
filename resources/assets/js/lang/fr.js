@@ -15,6 +15,16 @@ export default {
       submit: 'Soumettre'
     },
 
+    buttons: {
+        next: 'suivant',
+        previous: 'précédent'
+    },
+
+    messages: {
+        submitting: 'Soumission de votre rétroaction',
+        submitted: 'Réussi! Merci pour vos commentaires'
+    },
+
     questions: {
     	q1: {
     		text: 'Dans quelle mesure chaque cours a-t-il atteint les objectifs énoncés?',
@@ -30,23 +40,23 @@ export default {
     		},
     		additional: {
     			question: {
-    				part1: 'Did the',
-    				part2: 'course successfully meet the learning objectives?'
+    				part1: 'Le cours',
+    				part2: `a-t-il atteint les objectifs d'apprentissage?`
     			},
     			radio: {
-    				text: 'Please select one:',
-    				option1: 'Yes',
-    				option2: 'No',
-    				option3: 'Partially'
+    				text: 'S’il vous plait, choisir une réponse :',
+    				option1: 'Yes / Oui',
+    				option2: 'No / Non',
+    				option3: 'Partially / Partiellement'
     			},
-    			comments: 'Comments',
+    			comments: 'Commentaires',
     			buttons: {
-    				submit: 'Submit additional feedback',
-    				cancel: 'Cancel'
+    				submit: 'Soumettre une rétroaction additionnelle',
+    				cancel: 'Annuler'
     			},
     			message: {
-    				header: 'Thank you!',
-    				text: 'If you would like to submit feedback on another course, please choose one from the dropdown menu above.'
+    				header: 'Merci!',
+    				text: 'Si vous désirez nous faire parvenir une rétroaction pour un autre cours, S.V.P. le sélectionner dans le menu déroulant ci-dessus.'
     			}
     		}
     	},
@@ -67,30 +77,30 @@ export default {
     			checkbox: {
     				text: 'Select one or more of the following themes:',
     				option1: 'Audio',
-    				option2: 'Content',
-    				option3: 'Format',
-    				option4: 'Time to complete'
+                    option2: 'Content / Contenu',
+                    option3: 'Format',
+                    option4: 'Time to complete / Durée'
     			},
-    			comments: 'Feel free to comment on the themes you chose...',
+    			comments: `N'hésitez pas à commenter les champs que vous avez choisis...`,
     			buttons: {
-    				submit: 'Submit additional feedback',
-    				cancel: 'Cancel'
+    				submit: 'Soumettre une rétroaction additionnelle',
+    				cancel: 'Annuler'
     			},
     			message: {
-    				header: 'Thank you!',
-    				text: 'If you would like to submit feedback on another course, please choose one from the dropdown menu above.'
+    				header: 'Merci!',
+    				text: 'Si vous désirez nous faire parvenir une rétroaction pour un autre cours, S.V.P. le sélectionner dans le menu déroulant ci-dessus.'
     			}
     		}
     	},
     	q3: {
     		text: 'Le cas échéant, quel sujet devrait être ajouté à cette série de cours?',
-    		placeholder: 'Type a topic description',
-    		button: 'Add topic',
+    		placeholder: 'Taper une description de sujet',
+    		button: 'Ajouter un sujet',
     		additional: {
     			message: {
-    				header: 'Thank you!',
-    				text: 'Would you like to suggest an additional topic? ',
-    				button: 'Yes'
+    				header: 'Merci',
+    				text: 'Aimeriez-vous proposer un autre sujet',
+    				button: 'Oui'
     			}
     		}
     	},
@@ -105,7 +115,7 @@ export default {
     			option6: 'Dual Polarization: Basic Radar Products / Les produits de base issus de la double polarisation',
     			option7: 'Dual Polarization: Advanced Radar Products / Les produits très poussés issus de la double polarisation'
     		},
-    		comments: 'Feel free to comment on any of your course choices...'
+    		comments: `N'hésitez pas à commenter chacun de vos choix de cours...`
     	},
     	q5: {
     		text: 'Jugez-vous utiles les parcours d’apprentissage proposés?',

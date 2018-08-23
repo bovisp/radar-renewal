@@ -5,7 +5,7 @@
     <div class="submitting" v-if="isSubmitting && !isSuccess">
       <div class="ui padded segment">
         <h4 class="ui header">
-          Submitting your feedback
+          {{ $t('messages.submitting') }}
         </h4>
 
         <div class="loader"></div>
@@ -15,7 +15,7 @@
     <div class="success" v-if="isSuccess">
       <div class="ui padded segment">
         <h4 class="ui header">
-          Success! Thanks for your feedback
+          {{ $t('messages.submitted') }}
         </h4>
 
         <i class="huge green check icon"></i>
@@ -192,7 +192,7 @@
 
           <div class="clearfix field">
             <button class="ui right floated primary button" @click.prevent="change('tab2')">
-              Next
+              {{ $t('buttons.next') }}
               <i class="right chevron icon"></i>
             </button>
           </div>
@@ -287,14 +287,14 @@
             >
               <i class="left chevron icon"></i>
 
-              Previous
+              {{ $t('buttons.previous') }}
             </button>
 
             <button 
               class="ui right floated primary button" 
               @click.prevent="change('tab3')"
             >
-              Next
+              {{ $t('buttons.next') }}
 
               <i class="right chevron icon"></i>
             </button>
@@ -382,7 +382,7 @@
             >
               <i class="left chevron icon"></i>
 
-              Previous
+              {{ $t('buttons.previous') }}
             </button>
           </div>
 
