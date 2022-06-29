@@ -57,7 +57,7 @@ return [
         	],
         	'dual_pol_advanced_products' => [
         		'title' => 'Le renouvèlement des radars : les produits très poussés issus de la double polarisation',
-        		'completion_range' => 'N.D.',
+        		'completion_range' => '60 min à 80 min',
         		'description' => 'Ce cours traite brièvement de produits plus complexes issus de radars à double polarisation, comme l’algorithme d’identification des cibles (ALIC) et l’estimation quantitative des précipitations (EQP).'
         	]
         ],

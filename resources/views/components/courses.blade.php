@@ -227,9 +227,9 @@
           {{-- <i class="users icon" style="position: relative; top:-3px;"></i> <span>23 Registered</span> --}}
 
           <a 
-            href="#" 
+            href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=241" 
             class="blue basic ui button small ml-auto disabled" 
-            title="{{ trans('app.sections.courses.soon_button') }}"
+            title="{{ trans('app.sections.courses.register_button') }}"
           >{{ trans('app.sections.courses.soon_button') }}</a>
         </div>
       </div>

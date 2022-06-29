@@ -57,7 +57,7 @@ return [
             ],
             'dual_pol_advanced_products' => [
                 'title' => 'Radar Renewal: Dual-Polarization Advanced Products',
-                'completion_range' => 'N/A',
+                'completion_range' => '60-80 minutes',
                 'description' => 'This course will provide an overview of the advanced dual-polarization products such as Particle Classification (PCA) and Quantitative Precipitation Estimation (QPE).'
             ]
         ],
