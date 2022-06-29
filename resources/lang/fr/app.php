@@ -56,9 +56,9 @@ return [
         		'description' => 'Ce cours traite brièvement des produits de base issus de radars à double polarisation, comme la réflectivité différentielle, le coefficient de corrélation et le déphasage différentiel.'
         	],
         	'dual_pol_advanced_products' => [
-        		'title' => 'Le renouvèlement des radars : les produits très poussés issus de la double polarisation',
+        		'title' => 'Le renouvèlement des radars : produits dérivés et signatures radar',
         		'completion_range' => '60 min à 80 min',
-        		'description' => 'Ce cours traite brièvement de produits plus complexes issus de radars à double polarisation, comme l’algorithme d’identification des cibles (ALIC) et l’estimation quantitative des précipitations (EQP).'
+        		'description' => 'Ce cours donnera un aperçu des produits dérivés des radars PARCA et EQPDP, ainsi que leurs usages et leurs limites. Diverses signatures telles que les débris de tornades, les colonnes de la ZDR et les signatures de pics de grêle seront également abordées.'
         	]
         ],
 

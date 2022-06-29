@@ -56,9 +56,9 @@ return [
                 'description' => 'This course will provide an overview of the basic dual-polarization products such as Differential Reflectivity, Correlation Coefficient, and Differential Phase Shift.'
             ],
             'dual_pol_advanced_products' => [
-                'title' => 'Radar Renewal: Dual-Polarization Advanced Products',
+                'title' => 'Radar Renewal: Derived Products and Radar Signatures',
                 'completion_range' => '60-80 minutes',
-                'description' => 'This course will provide an overview of the advanced dual-polarization products such as Particle Classification (PCA) and Quantitative Precipitation Estimation (QPE).'
+                'description' => 'This course will provide an overview of the PARCA and DPQPE Radar derived products and their use and limitations. Various signatures such as Tornado Debris, ZDR Columns and Hail Spikes Signatures will also be discussed.'
             ]
         ],
 
