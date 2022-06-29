@@ -228,9 +228,9 @@
 
           <a 
             href="http://msc-educ-smc.cmc.ec.gc.ca/moodle/course/view.php?id=241" 
-            class="blue basic ui button small ml-auto disabled" 
+            class="blue basic ui button small ml-auto" 
             title="{{ trans('app.sections.courses.register_button') }}"
-          >{{ trans('app.sections.courses.soon_button') }}</a>
+          >{{ trans('app.sections.courses.register_button') }}</a>
         </div>
       </div>
     </div>
